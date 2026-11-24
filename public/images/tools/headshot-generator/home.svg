@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="How an AI headshot generator works: upload selfies, AI generates headshots, pick one for LinkedIn">
+  <rect width="1200" height="900" fill="#f9efe6"/>
+  <rect x="0" y="0" width="1200" height="120" fill="#6b2d1a"/>
+  <text x="600" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="bold" fill="#ffffff" text-anchor="middle">AI Headshot Generator</text>
+  <text x="600" y="94" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#e8c9b0" text-anchor="middle">Selfies in, a LinkedIn-ready portrait out</text>
+
+  <!-- Before panel -->
+  <g>
+    <rect x="60" y="180" width="500" height="380" rx="20" fill="#ffffff" stroke="#e0c9b8" stroke-width="2"/>
+    <text x="310" y="232" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#8a7a6e" text-anchor="middle">BEFORE · PLAIN SELFIE</text>
+    <circle cx="310" cy="320" r="55" fill="#c9c0b6"/>
+    <ellipse cx="310" cy="455" rx="90" ry="50" fill="#c9c0b6"/>
+    <text x="310" y="540" font-family="Arial, sans-serif" font-size="20" fill="#4a5568" text-anchor="middle">1 to 20 photos · good light</text>
+  </g>
+
+  <!-- Arrow -->
+  <path d="M 575 370 L 625 370 M 610 355 L 630 370 L 610 385" stroke="#c96a2e" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- After panel -->
+  <g>
+    <rect x="640" y="180" width="500" height="380" rx="20" fill="#ffffff" stroke="#c96a2e" stroke-width="2"/>
+    <text x="890" y="232" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#c96a2e" text-anchor="middle">AFTER · LINKEDIN-READY</text>
+    <circle cx="890" cy="320" r="55" fill="#c96a2e"/>
+    <ellipse cx="890" cy="455" rx="90" ry="50" fill="#c96a2e"/>
+    <circle cx="965" cy="390" r="28" fill="#2f855a"/>
+    <text x="965" y="399" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">✓</text>
+    <text x="890" y="540" font-family="Arial, sans-serif" font-size="20" fill="#4a5568" text-anchor="middle">20 to 300+ headshots</text>
+  </g>
+
+  <!-- Step chips -->
+  <g>
+    <rect x="60" y="575" width="340" height="40" rx="20" fill="#6b2d1a"/>
+    <text x="230" y="601" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">1 · Upload selfies</text>
+    <rect x="430" y="575" width="340" height="40" rx="20" fill="#6b2d1a"/>
+    <text x="600" y="601" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">2 · AI generates</text>
+    <rect x="800" y="575" width="340" height="40" rx="20" fill="#c96a2e"/>
+    <text x="970" y="601" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">3 · Pick your photo</text>
+  </g>
+
+  <!-- Bottom strip -->
+  <g>
+    <rect x="60" y="630" width="1080" height="180" rx="20" fill="#6b2d1a"/>
+    <text x="600" y="685" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">What to check before you pay</text>
+    <text x="200" y="735" font-family="Arial, sans-serif" font-size="22" fill="#f9efe6" text-anchor="middle">Free preview?</text>
+    <text x="600" y="735" font-family="Arial, sans-serif" font-size="22" fill="#f9efe6" text-anchor="middle">Photos deleted?</text>
+    <text x="1000" y="735" font-family="Arial, sans-serif" font-size="22" fill="#f9efe6" text-anchor="middle">Commercial rights?</text>
+    <text x="200" y="770" font-family="Arial, sans-serif" font-size="20" fill="#e8c9b0" text-anchor="middle">or a refund window</text>
+    <text x="600" y="770" font-family="Arial, sans-serif" font-size="20" fill="#e8c9b0" text-anchor="middle">never used for training</text>
+    <text x="1000" y="770" font-family="Arial, sans-serif" font-size="20" fill="#e8c9b0" text-anchor="middle">yours to use anywhere</text>
+  </g>
+</svg>

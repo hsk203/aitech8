@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="How an AI meeting assistant works for small teams: capture the call, write the summary, hand off the action items">
+  <rect width="1200" height="900" fill="#f2ecf3"/>
+  <rect x="0" y="0" width="1200" height="120" fill="#452a5e"/>
+  <text x="600" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="bold" fill="#ffffff" text-anchor="middle">AI Meeting Assistant for Small Teams</text>
+  <text x="600" y="94" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#d5c3e0" text-anchor="middle">Capture the call, write the summary, hand off the work</text>
+
+  <!-- Timeline spine -->
+  <line x1="140" y1="250" x2="140" y2="550" stroke="#7a4a9e" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Step 1 -->
+  <g>
+    <circle cx="140" cy="250" r="30" fill="#452a5e"/>
+    <text x="140" y="259" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+    <rect x="190" y="190" width="950" height="120" rx="16" fill="#ffffff" stroke="#ddd0e2" stroke-width="2"/>
+    <text x="230" y="236" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#452a5e">Capture</text>
+    <text x="230" y="272" font-family="Arial, sans-serif" font-size="22" fill="#4a5568">Bot or bot-free — Zoom, Meet, Teams</text>
+    <circle cx="1090" cy="250" r="26" fill="#452a5e"/>
+    <text x="1090" y="258" font-family="Arial, sans-serif" font-size="22" fill="#ffffff" text-anchor="middle">●</text>
+    <text x="1090" y="292" font-family="Arial, sans-serif" font-size="18" fill="#7a4a9e" text-anchor="middle">REC</text>
+  </g>
+
+  <!-- Step 2 -->
+  <g>
+    <circle cx="140" cy="400" r="30" fill="#452a5e"/>
+    <text x="140" y="409" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+    <rect x="190" y="340" width="950" height="120" rx="16" fill="#ffffff" stroke="#ddd0e2" stroke-width="2"/>
+    <text x="230" y="386" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#452a5e">Summarize</text>
+    <text x="230" y="422" font-family="Arial, sans-serif" font-size="22" fill="#4a5568">Decisions, owners, deadlines in one note</text>
+    <text x="1090" y="392" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#7a4a9e" text-anchor="middle">✓</text>
+    <text x="1090" y="424" font-family="Arial, sans-serif" font-size="18" fill="#7a4a9e" text-anchor="middle">Done</text>
+  </g>
+
+  <!-- Step 3 -->
+  <g>
+    <circle cx="140" cy="550" r="30" fill="#7a4a9e"/>
+    <text x="140" y="559" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+    <rect x="190" y="490" width="950" height="120" rx="16" fill="#ffffff" stroke="#ddd0e2" stroke-width="2"/>
+    <text x="230" y="536" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#452a5e">Hand off</text>
+    <text x="230" y="572" font-family="Arial, sans-serif" font-size="22" fill="#4a5568">Action items land where the work lives</text>
+    <text x="1090" y="542" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#7a4a9e" text-anchor="middle">→</text>
+    <text x="1090" y="574" font-family="Arial, sans-serif" font-size="18" fill="#7a4a9e" text-anchor="middle">CRM</text>
+  </g>
+
+  <!-- Bottom strip -->
+  <g>
+    <rect x="60" y="630" width="1080" height="180" rx="20" fill="#452a5e"/>
+    <text x="600" y="685" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">What to check before you pick one</text>
+    <text x="200" y="735" font-family="Arial, sans-serif" font-size="22" fill="#f2ecf3" text-anchor="middle">Free plan limits?</text>
+    <text x="600" y="735" font-family="Arial, sans-serif" font-size="22" fill="#f2ecf3" text-anchor="middle">Bot or bot-free?</text>
+    <text x="1000" y="735" font-family="Arial, sans-serif" font-size="22" fill="#f2ecf3" text-anchor="middle">CRM handoff?</text>
+    <text x="200" y="770" font-family="Arial, sans-serif" font-size="20" fill="#d5c3e0" text-anchor="middle">minutes, storage, summaries</text>
+    <text x="600" y="770" font-family="Arial, sans-serif" font-size="20" fill="#d5c3e0" text-anchor="middle">clients dislike a bot</text>
+    <text x="1000" y="770" font-family="Arial, sans-serif" font-size="20" fill="#d5c3e0" text-anchor="middle">owners and deadlines</text>
+  </g>
+</svg>

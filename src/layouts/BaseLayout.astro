@@ -52,6 +52,14 @@ const ogImageUrl = new URL(ogImage ?? welcomeConfig.bgImage, siteInfo.url);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q37MYTPG7"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9Q37MYTPG7');
+    </script>
     <link rel="icon" type="image/svg+xml" href={siteInfo.favicon} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
@@ -124,7 +132,8 @@ const ogImageUrl = new URL(ogImage ?? welcomeConfig.bgImage, siteInfo.url);
         © {new Date().getFullYear()} {personalInfo.englishName} ·{" "}
         <a href={withBase("/rss.xml")}>{t("common.rss")}</a> ·{" "}
         <a href={withBase("/about/")}>{t("common.aboutSite")}</a> ·{" "}
-        <a href={withBase("/privacy/")}>{t("common.privacy")}</a> ·{" "}
+        <a href={withBase("/privacy-policy/")}>{t("common.privacy")}</a> ·{" "}
+        <a href={withBase("/editorial-policy/")}>{t("common.editorial")}</a> ·{" "}
         <a href={withBase("/terms/")}>{t("common.terms")}</a> ·{" "}
         <a href={withBase("/contact/")}>{t("common.contact")}</a>
       </p>

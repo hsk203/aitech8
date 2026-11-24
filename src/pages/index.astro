@@ -4,12 +4,9 @@ import BlogLayout from "../layouts/BlogLayout.astro";
 import PostFeed from "../components/posts/PostFeed.vue";
 import PostListFallback from "../components/posts/PostListFallback.astro";
 import { getPosts, summarize } from "../lib/posts";
-import { categoryNames, categoryLabel } from "../data/post-options";
+import { categoryNames, categoryLabel, categoryDescription } from "../data/post-options";
 import { withBase } from "../lib/url";
 const posts = (await getPosts()).map(summarize);
-const counts = new Map(
-  categoryNames.map((c) => [c, posts.filter((p) => p.category === c).length]),
-);
 ---
 
 <BlogLayout home>
@@ -30,7 +27,7 @@ const counts = new Map(
           href={withBase(`/?category=${encodeURIComponent(c)}`)}
         >
           <strong>{categoryLabel(c)}</strong>
-          <span>{t("post.records", { count: counts.get(c) ?? 0 })}</span>
+          <span>{categoryDescription[c]}</span>
         </a>
       ))}
     </div>
@@ -171,6 +168,7 @@ const counts = new Map(
   }
   .category-card span {
     font-size: 11px;
+    line-height: 1.5;
     color: var(--muted);
   }
   :global(.dark) .category-card:nth-child(4n + 1) {

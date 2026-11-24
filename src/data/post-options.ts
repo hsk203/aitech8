@@ -10,6 +10,12 @@ export const categoryLabel = (category: string) =>
   categoryNames.includes(category as Category)
     ? t(`category.${category as Category}`)
     : category;
+export const categoryDescription: Record<Category, string> = {
+  comparisons: "Side-by-side roundups to help you choose.",
+  workflows: "Multi-tool processes, start to finish.",
+  tutorials: "Hands-on how-tos for one job at a time.",
+  reviews: "One tool, tested in depth.",
+};
 // Preserve frontmatter written with Chinese category labels.
 export function normalizeCategory(value: string): string {
   const legacy: Record<string, Category> = {};

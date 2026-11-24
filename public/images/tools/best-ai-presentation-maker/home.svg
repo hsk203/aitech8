@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="How an AI presentation maker works: prompt, draft deck, editable slides, export to PowerPoint">
+  <rect width="1200" height="900" fill="#eef2ea"/>
+  <rect x="0" y="0" width="1200" height="120" fill="#1e4636"/>
+  <text x="600" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="bold" fill="#ffffff" text-anchor="middle">Best AI Presentation Maker</text>
+  <text x="600" y="94" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#bcd4c2" text-anchor="middle">Prompt in, editable deck out — if the export survives</text>
+
+  <!-- Slide deck preview (left) -->
+  <g>
+    <rect x="100" y="205" width="460" height="340" rx="12" fill="#dfe8dc"/>
+    <rect x="80" y="230" width="460" height="340" rx="12" fill="#ffffff" stroke="#cfd8c8" stroke-width="2"/>
+    <rect x="110" y="260" width="300" height="28" rx="6" fill="#1e4636"/>
+    <rect x="110" y="310" width="400" height="12" rx="6" fill="#c3cec0"/>
+    <rect x="110" y="334" width="340" height="12" rx="6" fill="#c3cec0"/>
+    <rect x="110" y="358" width="380" height="12" rx="6" fill="#c3cec0"/>
+    <rect x="110" y="400" width="200" height="130" rx="10" fill="#e8f0e8" stroke="#9db89b" stroke-width="2"/>
+    <text x="210" y="470" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1e4636" text-anchor="middle">8–12 slides</text>
+    <rect x="330" y="400" width="180" height="130" rx="10" fill="#fdf3d7" stroke="#c08a2d" stroke-width="2"/>
+    <text x="420" y="450" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1e4636" text-anchor="middle">.pptx</text>
+    <text x="420" y="484" font-family="Arial, sans-serif" font-size="20" fill="#4a5568" text-anchor="middle">editable</text>
+    <text x="310" y="612" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1e4636" text-anchor="middle">Your deck, ready to edit</text>
+  </g>
+
+  <!-- Steps (right, stacked rows) -->
+  <g>
+    <rect x="640" y="180" width="500" height="120" rx="16" fill="#ffffff" stroke="#cfd8c8" stroke-width="2"/>
+    <circle cx="695" cy="240" r="28" fill="#1e4636"/>
+    <text x="695" y="249" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+    <text x="740" y="232" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1e4636">Describe</text>
+    <text x="740" y="264" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">One prompt, or a</text>
+    <text x="740" y="290" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">document to convert</text>
+  </g>
+  <g>
+    <rect x="640" y="320" width="500" height="120" rx="16" fill="#ffffff" stroke="#cfd8c8" stroke-width="2"/>
+    <circle cx="695" cy="380" r="28" fill="#1e4636"/>
+    <text x="695" y="389" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+    <text x="740" y="372" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1e4636">Draft</text>
+    <text x="740" y="404" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">AI builds layout,</text>
+    <text x="740" y="430" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">copy and visuals</text>
+  </g>
+  <g>
+    <rect x="640" y="460" width="500" height="120" rx="16" fill="#ffffff" stroke="#cfd8c8" stroke-width="2"/>
+    <circle cx="695" cy="520" r="28" fill="#c08a2d"/>
+    <text x="695" y="529" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+    <text x="740" y="512" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1e4636">Export</text>
+    <text x="740" y="544" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">Open it in desktop</text>
+    <text x="740" y="570" font-family="Arial, sans-serif" font-size="20" fill="#4a5568">PowerPoint first</text>
+  </g>
+
+  <!-- Bottom strip -->
+  <g>
+    <rect x="60" y="630" width="1080" height="180" rx="20" fill="#1e4636"/>
+    <text x="600" y="685" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">What to check before you pick one</text>
+    <text x="200" y="735" font-family="Arial, sans-serif" font-size="22" fill="#eef2ea" text-anchor="middle">Export editable?</text>
+    <text x="600" y="735" font-family="Arial, sans-serif" font-size="22" fill="#eef2ea" text-anchor="middle">Free credits run out?</text>
+    <text x="1000" y="735" font-family="Arial, sans-serif" font-size="22" fill="#eef2ea" text-anchor="middle">Yearly cost?</text>
+    <text x="200" y="770" font-family="Arial, sans-serif" font-size="20" fill="#bcd4c2" text-anchor="middle">native .pptx or images</text>
+    <text x="600" y="770" font-family="Arial, sans-serif" font-size="20" fill="#bcd4c2" text-anchor="middle">one-time, not monthly</text>
+    <text x="1000" y="770" font-family="Arial, sans-serif" font-size="20" fill="#bcd4c2" text-anchor="middle">per seat, per year</text>
+  </g>
+</svg>

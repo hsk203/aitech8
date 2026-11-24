@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e1424"/>
+      <stop offset="1" stop-color="#1b2a4a"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6ee7ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#6ee7ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.62" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#7dd3fc" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7dd3fc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+
+  <!-- faint grid -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <line x1="300" y1="0" x2="300" y2="675"/>
+    <line x1="600" y1="0" x2="600" y2="675"/>
+    <line x1="900" y1="0" x2="900" y2="675"/>
+    <line x1="0" y1="225" x2="1200" y2="225"/>
+    <line x1="0" y1="450" x2="1200" y2="450"/>
+  </g>
+
+  <!-- director's light beam sweeping across the frame -->
+  <polygon points="180,120 760,300 760,420 180,560" fill="url(#beam)"/>
+
+  <!-- viewfinder frame -->
+  <g fill="none" stroke="#e8f6ff" stroke-width="10" stroke-linecap="round">
+    <path d="M180 210 v-60 a20 20 0 0 1 20 -20 h60"/>
+    <path d="M1020 130 h-60 a20 20 0 0 0 -20 20 v60"/>
+    <path d="M1020 465 v60 a20 20 0 0 1 -20 20 h-60"/>
+    <path d="M180 545 v-60 a20 20 0 0 0 20 -20 h60"/>
+  </g>
+
+  <!-- rule-of-thirds crosshair -->
+  <g stroke="#e8f6ff" stroke-opacity="0.65" stroke-width="3">
+    <line x1="600" y1="300" x2="600" y2="375"/>
+    <line x1="562" y1="337" x2="638" y2="337"/>
+    <circle cx="600" cy="337" r="26" fill="none"/>
+  </g>
+
+  <!-- scene: horizon, hills and sun disc -->
+  <circle cx="790" cy="300" r="72" fill="#fbbf24" opacity="0.9"/>
+  <path d="M180 470 Q 420 380 600 450 T 1020 430 V 545 H 180 Z" fill="#16233f"/>
+  <path d="M180 500 Q 480 440 760 490 T 1020 480 V 545 H 180 Z" fill="#0e1a30"/>
+
+  <!-- actor figure being staged: simple silhouette with motion path -->
+  <g>
+    <path d="M300 470 q 90 -70 210 -55 q 120 15 190 -35" fill="none" stroke="#6ee7ff" stroke-width="3" stroke-dasharray="10 8" opacity="0.8"/>
+    <circle cx="300" cy="470" r="9" fill="#6ee7ff"/>
+    <circle cx="510" cy="415" r="9" fill="#6ee7ff" opacity="0.55"/>
+    <g fill="#e8f6ff">
+      <circle cx="700" cy="380" r="17"/>
+      <path d="M700 397 c -26 0 -34 22 -34 48 l -4 60 12 3 8 -52 18 2 18 -2 8 52 12 -3 -4 -60 c 0 -26 -8 -48 -34 -48 Z"/>
+    </g>
+    <circle cx="700" cy="380" r="26" fill="none" stroke="#6ee7ff" stroke-width="3" stroke-dasharray="6 6"/>
+  </g>
+
+  <!-- camera orbit arc -->
+  <path d="M 820 520 A 260 130 0 0 1 1080 350" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+  <polygon points="1080,350 1058,348 1072,372" fill="#fbbf24"/>
+
+  <!-- play / live indicator dot -->
+  <circle cx="230" cy="180" r="12" fill="#f87171"/>
+  <circle cx="230" cy="180" r="20" fill="none" stroke="#f87171" stroke-width="2" opacity="0.5"/>
+</svg>

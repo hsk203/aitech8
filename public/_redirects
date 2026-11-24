@@ -7,6 +7,7 @@
 /en/ / 301
 /en/* /:splat 301
 /articles /posts/ 301
+/privacy/ /privacy-policy/ 301
 /sitemap-en.xml /sitemap-index.xml 301
 /posts/best-ai-image-generators-2026/ /posts/best-ai-image-generators/ 301
 /posts/jasper-vs-writesonic-2026/ /posts/jasper-vs-writesonic/ 301
