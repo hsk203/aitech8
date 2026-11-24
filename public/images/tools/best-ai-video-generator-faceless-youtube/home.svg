@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Faceless YouTube pipeline: script, voice, visuals and publishing feed into a finished video on a phone screen">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101828"/>
+      <stop offset="1" stop-color="#1d2939"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <!-- Top title block, left aligned, no header band -->
+  <text x="70" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="bold" fill="#ffffff">Faceless YouTube, Built by AI</text>
+  <text x="70" y="138" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#98a2b3">No camera. No face. Four steps to a finished video.</text>
+  <rect x="70" y="162" width="180" height="6" rx="3" fill="#f04438"/>
+
+  <!-- Left rail: four pipeline stages, vertical stack -->
+  <g font-family="Arial, Helvetica, sans-serif">
+    <!-- Stage 1 -->
+    <g>
+      <rect x="70" y="200" width="560" height="118" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#344054" stroke-width="2"/>
+      <circle cx="128" cy="259" r="30" fill="#f04438"/>
+      <text x="128" y="269" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+      <text x="180" y="248" font-size="26" font-weight="bold" fill="#ffffff">Script</text>
+      <text x="180" y="284" font-size="21" fill="#d0d5dd">Your angle, your words — not a template</text>
+    </g>
+    <!-- Stage 2 -->
+    <g>
+      <rect x="70" y="338" width="560" height="118" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#344054" stroke-width="2"/>
+      <circle cx="128" cy="397" r="30" fill="#f79009"/>
+      <text x="128" y="407" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+      <text x="180" y="386" font-size="26" font-weight="bold" fill="#ffffff">Voice</text>
+      <text x="180" y="422" font-size="21" fill="#d0d5dd">One narrator voice, every episode</text>
+    </g>
+    <!-- Stage 3 -->
+    <g>
+      <rect x="70" y="476" width="560" height="118" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#344054" stroke-width="2"/>
+      <circle cx="128" cy="535" r="30" fill="#12b76a"/>
+      <text x="128" y="545" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+      <text x="180" y="524" font-size="26" font-weight="bold" fill="#ffffff">Visuals</text>
+      <text x="180" y="560" font-size="21" fill="#d0d5dd">Stock or generated — varied, not repeated</text>
+    </g>
+    <!-- Stage 4 -->
+    <g>
+      <rect x="70" y="614" width="560" height="118" rx="16" fill="#ffffff" fill-opacity="0.06" stroke="#f04438" stroke-width="2"/>
+      <circle cx="128" cy="673" r="30" fill="#7c3aed"/>
+      <text x="128" y="683" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+      <text x="180" y="662" font-size="26" font-weight="bold" fill="#ffffff">Publish</text>
+      <text x="180" y="698" font-size="21" fill="#d0d5dd">Human pass first — then upload</text>
+    </g>
+    <!-- Connector arrows between stages -->
+    <g stroke="#667085" stroke-width="3" fill="none" stroke-linecap="round">
+      <line x1="128" y1="318" x2="128" y2="338"/>
+      <line x1="128" y1="456" x2="128" y2="476"/>
+      <line x1="128" y1="594" x2="128" y2="614"/>
+    </g>
+  </g>
+
+  <!-- Right side: phone mock with finished video -->
+  <g>
+    <rect x="700" y="200" width="430" height="532" rx="36" fill="#0b0f19" stroke="#344054" stroke-width="3"/>
+    <rect x="700" y="200" width="430" height="532" rx="36" fill="none" stroke="#475467" stroke-width="1"/>
+    <!-- Screen -->
+    <rect x="722" y="222" width="386" height="300" rx="14" fill="url(#screen)"/>
+    <!-- Play button -->
+    <circle cx="915" cy="372" r="46" fill="#ffffff" fill-opacity="0.92"/>
+    <polygon points="900,348 900,396 940,372" fill="#101828"/>
+    <!-- Progress bar -->
+    <rect x="742" y="496" width="346" height="8" rx="4" fill="#ffffff" fill-opacity="0.25"/>
+    <rect x="742" y="496" width="210" height="8" rx="4" fill="#f04438"/>
+    <!-- Title lines -->
+    <rect x="722" y="548" width="300" height="18" rx="9" fill="#ffffff" fill-opacity="0.85"/>
+    <rect x="722" y="578" width="210" height="18" rx="9" fill="#ffffff" fill-opacity="0.4"/>
+    <!-- Channel row -->
+    <circle cx="742" cy="640" r="18" fill="#f04438"/>
+    <text x="742" y="647" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">▶</text>
+    <rect x="772" y="632" width="150" height="16" rx="8" fill="#ffffff" fill-opacity="0.7"/>
+    <!-- Subscribe pill -->
+    <rect x="960" y="622" width="148" height="36" rx="18" fill="#f04438"/>
+    <text x="1034" y="646" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">Subscribe</text>
+  </g>
+
+  <!-- Bottom check strip -->
+  <g>
+    <rect x="70" y="772" width="1060" height="72" rx="16" fill="#f04438"/>
+    <text x="600" y="818" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Before you monetize: original script · varied visuals · no watermark</text>
+  </g>
+</svg>

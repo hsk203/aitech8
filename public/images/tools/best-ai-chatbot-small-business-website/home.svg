@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="How a small business AI chatbot works: visitor asks, the bot answers from the website, a human takes over when needed">
+  <rect width="1200" height="900" fill="#eef4f2"/>
+  <rect x="0" y="0" width="1200" height="120" fill="#0f4c4c"/>
+  <text x="600" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="#ffffff" text-anchor="middle">Best AI Chatbot for Small Business Websites</text>
+  <text x="600" y="94" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#bfe0d8" text-anchor="middle">Answers at 10 pm. Leads by morning. No developer needed.</text>
+
+  <!-- Chat window mock -->
+  <g>
+    <rect x="90" y="165" width="1020" height="470" rx="24" fill="#ffffff" stroke="#c8dcd6" stroke-width="2"/>
+    <!-- window bar -->
+    <rect x="90" y="165" width="1020" height="58" rx="24" fill="#0f4c4c"/>
+    <rect x="90" y="200" width="1020" height="23" fill="#0f4c4c"/>
+    <circle cx="130" cy="194" r="8" fill="#e0653a"/>
+    <circle cx="158" cy="194" r="8" fill="#f2b705"/>
+    <circle cx="186" cy="194" r="8" fill="#3fae8a"/>
+    <text x="1060" y="202" font-family="Arial, sans-serif" font-size="20" fill="#bfe0d8" text-anchor="end">your-website.com</text>
+
+    <!-- Visitor bubble (left) -->
+    <g>
+      <rect x="140" y="255" width="520" height="86" rx="18" fill="#eef1f0"/>
+      <text x="170" y="292" font-family="Arial, sans-serif" font-size="26" fill="#22302e">Do you deliver on Saturdays?</text>
+      <text x="170" y="324" font-family="Arial, sans-serif" font-size="18" fill="#6b7a77">Visitor · 10:04 pm</text>
+      <circle cx="1090" cy="298" r="30" fill="#dfe8e5"/>
+      <text x="1090" y="307" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0f4c4c" text-anchor="middle">?</text>
+    </g>
+
+    <!-- Bot bubble (right) -->
+    <g>
+      <rect x="540" y="365" width="560" height="110" rx="18" fill="#0f4c4c"/>
+      <text x="570" y="402" font-family="Arial, sans-serif" font-size="26" fill="#ffffff">Yes — Saturday delivery runs until 2 pm.</text>
+      <text x="570" y="438" font-family="Arial, sans-serif" font-size="26" fill="#ffffff">Shall I book a slot for you?</text>
+      <rect x="140" y="392" width="150" height="44" rx="22" fill="#e0653a"/>
+      <text x="215" y="421" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle">AI BOT</text>
+      <text x="320" y="421" font-family="Arial, sans-serif" font-size="18" fill="#6b7a77">answered from your website</text>
+    </g>
+
+    <!-- Handoff row -->
+    <g>
+      <line x1="600" y1="540" x2="600" y2="585" stroke="#0f4c4c" stroke-width="4"/>
+      <text x="600" y="570" font-family="Arial, sans-serif" font-size="22" fill="#0f4c4c" text-anchor="middle">↓</text>
+      <rect x="140" y="540" width="920" height="64" rx="32" fill="#fdf3d7" stroke="#e0a92e" stroke-width="2"/>
+      <circle cx="185" cy="572" r="20" fill="#e0653a"/>
+      <text x="185" y="580" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">You</text>
+      <text x="220" y="581" font-family="Arial, sans-serif" font-size="22" fill="#4a3f10">Human takes over when the bot doesn't know — chat history included</text>
+    </g>
+  </g>
+
+  <!-- Bottom strip: three checks -->
+  <g>
+    <rect x="60" y="665" width="1080" height="175" rx="20" fill="#0f4c4c"/>
+    <text x="600" y="712" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Before you pick one</text>
+    <text x="240" y="762" font-family="Arial, sans-serif" font-size="22" fill="#eef4f2" text-anchor="middle">✓ Free plan to start</text>
+    <text x="600" y="762" font-family="Arial, sans-serif" font-size="22" fill="#eef4f2" text-anchor="middle">✓ Watch the quota</text>
+    <text x="960" y="762" font-family="Arial, sans-serif" font-size="22" fill="#eef4f2" text-anchor="middle">✓ Handoff, not a dead end</text>
+    <text x="240" y="800" font-family="Arial, sans-serif" font-size="18" fill="#bfe0d8" text-anchor="middle">Tidio · HubSpot · Crisp</text>
+    <text x="600" y="800" font-family="Arial, sans-serif" font-size="18" fill="#bfe0d8" text-anchor="middle">what happens at the limit?</text>
+    <text x="960" y="800" font-family="Arial, sans-serif" font-size="18" fill="#bfe0d8" text-anchor="middle">a form, not silence</text>
+  </g>
+</svg>
