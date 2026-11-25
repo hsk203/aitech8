@@ -8,7 +8,7 @@ tags: ["AI transcription", "podcasting", "Descript"]
 cover: tool
 coverImage: "/images/tools/best-ai-transcription-software-podcasters/home.svg"
 featured: false
-draft: true
+draft: false
 ---
 
 Descript is the best AI transcription software for most podcasters, because the transcript is the editor: cut a sentence and the audio goes with it. If you only need accurate text and exports without an editor, Sonix is the specialist pick ($25/month on Core for up to 5 hours). Rev is the pick when a human must check the final words.
@@ -21,7 +21,7 @@ Descript's lead holds for a weekly one- or two-host show — less so for long ep
 | --- | --- | --- |
 | Descript | Editing the episode from the transcript | $24–$35 per person/month |
 | Sonix | Accurate file transcription and exports | $10 per audio hour; $25–$80/month plans |
-| Rev | AI drafts plus human-verified finals | $0.25 per minute (AI) |
+| Rev | AI drafts plus human-verified finals | $0.25 per minute (AI); $25.49–$29.99/month (Essentials) |
 | Riverside | Recording and transcription in one place | $24–$35 per month |
 | Otter.ai | Live transcription and searchable archive | $8.33–$16.99 per user/month |
 | Whisper | Cheapest raw transcription, DIY workflow | Under a cent per minute via API |
@@ -78,7 +78,9 @@ Otter's 1,200 monthly minutes sound generous until a two-hour episode hits the 9
 
 Descript is built for podcast post-production: edit the transcript and the audio or video changes with it. Delete a sentence in the text and it leaves the recording. That single mechanic covers most of a weekly edit, and built-in Studio Sound cleanup lifts less-than-pristine guest audio without a separate tool.
 
-Creator runs $24–$35 per person per month and includes 30 media hours and 800 AI credits a month, with watermark-free export up to 4K. The free plan includes about one media hour a month — enough to trial, not to run a show on. Cost creeps up if project counts and storage are heavy, and Descript transcribes one language per file. If you publish video clips, pair it with a [best AI video generator for YouTube Shorts](/posts/best-ai-video-generator-for-youtube-shorts/) workflow for vertical video.
+Creator runs $24–$35 per person per month and includes 30 media hours and 800 AI credits a month, with watermark-free export up to 4K. The free plan includes about one media hour a month — enough to trial, not to run a show on.
+
+Cost creeps up if project counts and storage are heavy, and Descript transcribes one language per file. If you publish video clips, pair it with a [best AI video generator for YouTube Shorts](/posts/best-ai-video-generator-for-youtube-shorts/) workflow for vertical video.
 
 **Pros:** best edit-by-text experience; strong speaker diarization; Studio Sound cleanup included. **Cons:** media-hour metering punishes heavy uploaders; one language per file; steepest learning curve here.
 
@@ -106,7 +108,9 @@ Most weeks the AI draft is covered by the included minutes, so you pay nothing e
 
 Riverside starts earlier in the workflow than anything else here. It records remote guests locally on each person's machine, then generates transcripts with speaker detection in more than 100 languages and lets you edit from the transcript, make captions, and cut clips. If you have not yet chosen a remote recording platform, that bundle is worth a close look: better captured audio makes every transcription engine's job easier.
 
-Pro runs $24–$35 per month with 15 hours a month of separate-track downloads, and transcription included rather than metered — including files you upload to the Studio, not only Riverside recordings. For a remote interview show, that is one bill for recording, transcription, and light editing. Riverside is less attractive as a pure transcription buy when the show already has a mature recorder and editing stack; its text editor is lighter than Descript's.
+Pro runs $24–$35 per month with 15 hours a month of separate-track downloads, and transcription included rather than metered — including files you upload to the Studio, not only Riverside recordings.
+
+For a remote interview show, that is one bill for recording, transcription, and light editing. Riverside is less attractive as a pure transcription buy when the show already has a mature recorder and editing stack; its text editor is lighter than Descript's.
 
 **Pros:** recording plus transcription in one bill; local recording per guest; strong multilingual support. **Cons:** weaker text editor than Descript; poor value as a transcription-only buy if you never record in Riverside.
 
@@ -130,7 +134,7 @@ Whisper is OpenAI's open-source speech-to-text model, and it is hard to beat on 
 
 Through OpenAI's API, whisper-1 costs a flat $0.006 a minute ($1.44 for a 240-minute month); gpt-transcribe is $0.0045 ($1.08) and gpt-4o-mini-transcribe about $0.003 (about $0.72), per OpenAI's pricing page. OpenAI retires whisper-1 — and gpt-4o-mini-transcribe — on 26 February 2027, so a new DIY workflow should start on gpt-transcribe.
 
-There is no app, no speaker diarization out of the box, and no editing surface — you chain it with tools like pyannote for speaker labels.
+There is no app, no speaker diarization out of the box, and no editing surface — you chain it with tools like pyannote.audio for speaker labels.
 
 MacWhisper wraps the model in a Mac app and keeps transcription on-device by default — the right answer for unreleased audio or local-only guest agreements. Atter AI, a local-first transcription app, makes a narrower privacy point: its recordings stay stored on your device, not on its servers — but the audio itself is processed through Atter's managed cloud service, per Atter's own comparison guide. Storage is local; processing is not, unlike MacWhisper.
 
