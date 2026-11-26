@@ -8,7 +8,7 @@ tags: ["AI chatbot", "small business", "customer support"]
 cover: tool
 coverImage: "/images/tools/best-ai-chatbot-small-business-website/home.svg"
 featured: false
-draft: true
+draft: false
 ---
 ## Verdict at a Glance
 
@@ -26,13 +26,13 @@ draft: true
 | Tool | Best for | Free plan | Paid range | At quota limit |
 |---|---|---|---|---|
 | Tidio | Shops that answer chats themselves | Yes, 50 conversations a month | $32.50–$63 a month and up | Stops; auto-upgrade at 95% on monthly plans |
-| Chatbase | AI-first Q&A and actions, helpdesk included | 7-day trial, no free plan | $120–$150 a month and up | Stops, shows "unavailable"; auto-recharge forty dollars per 1,000 credits |
+| Chatbase | AI-first Q&A and actions, helpdesk included | 7-day trial, no free plan | $120–$150 a month and up | Stops, shows "unavailable"; auto-recharge $40 per 1,000 credits |
 | HubSpot | Teams already running on HubSpot CRM | Yes, basic bot free | $0–$100 per seat a month | AI pauses until reset or top-up |
 | Crisp | One flat price, no per-seat billing | Yes, 2 seats, no AI | $45–$295 a month | Hugo stops; chats go to humans |
 | Intercom Fin | Support teams with real ticket volume | 14-day trial | $0.99–$1.99/resolution (+ seats if using Intercom) | No quota, pay per outcome |
-| Botsonic | The lowest-cost paid start | 7-day trial | $16–$19 a month and up | Stops; add 2,000 messages for twenty-five dollars |
+| Botsonic | The lowest-cost paid start | 7-day trial | $16–$19 a month and up | Stops; add 2,000 messages for $25 |
 
-Prices checked November 24, 2026 unless noted; check the official site before you buy.
+Prices checked November 24–25, 2026; check the official site before you buy.
 
 ## What a small business chatbot actually does
 
@@ -50,7 +50,7 @@ Every chatbot here sells you a monthly allowance — conversations, message cred
 
 **The bot stops.** Some free plans simply stop answering: a visitor types a question, gets nothing, and leaves. This is the worst outcome.
 
-**The bot falls back to a form.** Better tools switch to lead capture: "We're offline — leave your details and we'll reply in the morning." Check that your tool does this before you buy.
+**The bot falls back to a form.** Better tools switch to lead capture: "We're offline — leave your details and we'll reply in the morning." Check that your tool does this before you buy. That fallback only exists where the tool still offers a free human seat or a form widget — the "At quota limit" column above shows most tools here simply stop instead.
 
 **The bill quietly grows.** Tidio's pricing FAQ says you can turn on automatic upgrades at checkout: at 95% of a limit, it moves up to the next tier and you pay that tier's price from then on ([tidio.com/pricing](https://www.tidio.com/pricing/)). Chatbase offers auto-recharge credits that top up your balance when it falls below a threshold you set ([chatbase.co/pricing](https://www.chatbase.co/pricing)). Both are useful, and both can surprise you if you never set a cap.
 
@@ -88,7 +88,7 @@ Its strength is maturity: actions, integrations, and a helpdesk included — and
 
 ### HubSpot
 
-HubSpot's chatbot builder lives inside its free CRM, and chats attach to contact records automatically, so sales sees the history next to the deal ([hubspot.com](https://www.hubspot.com/crm/am_chatbot)).
+HubSpot's chatbot builder lives inside its free CRM, and chats attach to contact records automatically, so sales sees the history next to the deal ([hubspot.com](https://www.hubspot.com/products/crm/what-is-a-chatbot)).
 
 The appeal is the price: the basic chatbot is free for up to two users ([hubspot.com](https://www.hubspot.com/pricing/service)), and lead qualification, meeting booking, and ticket flows are included. The limitation is that the free builder is rule-based, not AI.
 
@@ -128,7 +128,7 @@ The draw is the price: $16–$19 a month for 1,000 messages, with a 7-day free t
 
 **Will a person answer chats, or should the bot work alone?** If someone will take over chats during the day, pick a tool with a real inbox: Tidio or Crisp. If nobody will staff chat, pick an AI-first builder: Chatbase (AI Q&A and actions, with a lightweight helpdesk included) or Botsonic. Tidio and Crisp are live-chat-first inboxes; Chatbase is AI-first. A bot with no human behind it still needs a fallback — a lead form, not silence.
 
-**How many conversations will you actually get?** Count last month's emails and form fills, add 50%, and buy that quota. Under 35 enquiries a month (50 with the buffer), Tidio Starter covers you; between 50 and 100 conversations, step up to Growth. Over 500, compare Chatbase's credit math against Intercom Fin's per-outcome price with your real numbers. Remember: credits and conversations are not the same unit, so read the FAQ before you compare prices.
+**How many conversations will you actually get?** Count last month's emails and form fills, add 50%, and buy that quota. Under 33 enquiries a month (50 with the buffer), Tidio Starter covers you; between 50 and 100 conversations, step up to Growth. Over 500, compare Chatbase's credit math against Intercom Fin's per-outcome price with your real numbers. Remember: credits and conversations are not the same unit, so read the FAQ before you compare prices.
 
 One more check before you pay: put a real photo of your team on the chat widget instead of a stock avatar — our guide to the [best AI headshot generator](/posts/best-ai-headshot-generator/) covers cheap ways to get one. If your bot will also handle voice calls, the [best AI voice generators](/posts/best-ai-voice-generators/) roundup covers the tools that pair with it.
 
