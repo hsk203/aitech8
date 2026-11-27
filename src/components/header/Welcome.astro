@@ -14,10 +14,14 @@ const Heading = headingLevel === 1 ? "h1" : "h2";
 
 <section
   class:list={["welcome-section", { compact }]}
-  style={`background-image: url('${welcomeConfig.bgImage}'); --hero-position: ${welcomeConfig.imagePosition}; --hero-overlay: ${welcomeConfig.overlayOpacity};`}
   aria-label={title || welcomeConfig.title}
 >
-  <div class="hero-shade"></div>
+  {/*
+    Hero 背景：纯 CSS 深色渐变（藏青 → 靛蓝 → 深青）+ 两处柔光，
+    无图片、无网络请求，LCP 不受影响。
+    2026-11-27：背景图 hero-refresh.webp 已移除（LCP 4.4s → 0.9s），
+    旧的半透明遮罩在浅色底上发灰、文字对比度不足，改为实色深底。
+  */}
   <div class="hero-content">
     <span class="hero-eyebrow">
       {compact ? t("hero.pageEyebrow") : t("hero.homeEyebrow")}
@@ -29,6 +33,7 @@ const Heading = headingLevel === 1 ? "h1" : "h2";
       </span>
     </Heading>
     <p>{subtitle || welcomeConfig.subTitle}</p>
+    <span class="hero-rule" aria-hidden="true"></span>
     {!compact && (
       <a href="#main-content" class="hero-explore">
         {t("hero.explore")}{" "}
@@ -44,9 +49,21 @@ const Heading = headingLevel === 1 ? "h1" : "h2";
 <style>
   .welcome-section {
     position: relative;
-    height: 360px;
-    background-size: cover;
-    background-position: var(--hero-position, center 47%);
+    height: 340px;
+    /* Pure-CSS dark background: deep navy -> indigo -> deep teal,
+       with two soft brand glows. No image, no fetch — LCP unaffected. */
+    background:
+      radial-gradient(
+        ellipse 55% 75% at 78% 12%,
+        rgb(8 168 157 / 0.28),
+        transparent 62%
+      ),
+      radial-gradient(
+        ellipse 45% 60% at 12% 88%,
+        rgb(79 95 244 / 0.22),
+        transparent 60%
+      ),
+      linear-gradient(118deg, #0a1230 0%, #121a3e 48%, #0b2a33 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,105 +71,73 @@ const Heading = headingLevel === 1 ? "h1" : "h2";
     color: white;
     overflow: hidden;
   }
-  .hero-shade {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background:
-      radial-gradient(
-        ellipse at 80% 22%,
-        color-mix(in srgb, var(--accent-2) 34%, transparent),
-        transparent 38%
-      ),
-      radial-gradient(
-        ellipse at 18% 14%,
-        color-mix(in srgb, var(--accent) 28%, transparent),
-        transparent 42%
-      ),
-      linear-gradient(
-        108deg,
-        rgb(8 15 39 / var(--hero-overlay, 0.38)) 0%,
-        rgb(25 20 61 / calc(var(--hero-overlay, 0.38) * 0.78)) 52%,
-        rgb(7 27 41 / calc(var(--hero-overlay, 0.38) * 0.86)) 100%
-      );
-  }
-  .welcome-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    opacity: 0.14;
-    background-image:
-      linear-gradient(#ffffff12 1px, transparent 1px),
-      linear-gradient(90deg, #ffffff12 1px, transparent 1px);
-    background-size: 44px 44px;
-    mask-image: linear-gradient(
-      90deg,
-      transparent,
-      black 46%,
-      black 82%,
-      transparent
-    );
-  }
   .hero-content {
     position: relative;
     z-index: 3;
-    padding: 25px 20px 55px;
-    text-shadow: 0 2px 18px rgb(17 10 28 / 48%);
+    padding: 30px 20px 60px;
+    text-shadow: 0 2px 18px rgb(0 0 0 / 35%);
   }
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     padding: 7px 13px;
-    border: 1px solid #ffffff3b;
+    border: 1px solid #ffffff40;
     border-radius: 999px;
-    background: #ffffff12;
-    backdrop-filter: blur(10px);
+    background: #ffffff1f;
     font-family: "Oxanium-Medium", var(--font-body);
     font-size: 11px;
     letter-spacing: 0.16em;
-    opacity: 0.98;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   .hero-content .hero-title {
-    margin: 0 0 10px;
-    font-size: clamp(30px, 3.5vw, 46px);
-    letter-spacing: 0.01em;
-    font-weight: 700;
-    line-height: 1.28;
-    text-shadow: 0 6px 28px rgb(17 10 28 / 64%);
+    margin: 0 0 14px;
+    font-size: clamp(34px, 4.2vw, 52px);
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    line-height: 1.12;
+    text-shadow: 0 4px 24px rgb(0 0 0 / 35%);
   }
   .hero-sparkle {
     display: inline-block;
-    font-size: 33px;
+    font-size: 36px;
     margin-left: 12px;
     vertical-align: top;
     color: var(--accent-2);
     text-shadow: 0 0 24px color-mix(in srgb, var(--accent-2) 52%, transparent);
   }
   .hero-content p {
-    font-size: 15px;
-    letter-spacing: 0.08em;
-    margin: 8px auto 23px;
-    max-width: 68ch;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    font-weight: 500;
+    color: rgb(255 255 255 / 0.88);
+    margin: 0 auto 22px;
+    max-width: 60ch;
     line-height: 1.7;
+  }
+  .hero-rule {
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin: 0 auto 24px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
   }
   .hero-explore {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    border: 1px solid #ffffff75;
-    background: #ffffff18;
-    padding: 8px 18px;
+    gap: 10px;
+    border: 1px solid rgb(255 255 255 / 0.55);
+    background: rgb(255 255 255 / 0.14);
+    padding: 10px 20px;
     border-radius: 30px;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgb(17 10 28 / 28%);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #fff;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 30%);
   }
   .hero-explore:hover {
-    background: #ffffff2e;
+    background: rgb(255 255 255 / 0.22);
     transform: translateY(-2px);
   }
   .hero-side-note {
@@ -194,25 +179,24 @@ const Heading = headingLevel === 1 ? "h1" : "h2";
   }
   @media (max-width: 760px) {
     .welcome-section {
-      height: 320px;
-      background-position: 50% 52%;
+      height: 300px;
     }
     .hero-content {
       padding-top: 50px;
     }
     .hero-content p {
-      font-size: 13px;
-      letter-spacing: 0.02em;
+      font-size: 14px;
+      letter-spacing: 0.01em;
       line-height: 1.65;
     }
     .hero-eyebrow {
       font-size: 10px;
       letter-spacing: 0.12em;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .hero-content .hero-title {
-      font-size: 29px;
-      line-height: 1.35;
+      font-size: 30px;
+      line-height: 1.2;
     }
     .hero-sparkle {
       font-size: 24px;
