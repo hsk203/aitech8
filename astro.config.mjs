@@ -5,7 +5,7 @@ import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
 import { loadEnv } from "vite";
 
-const { SITE_URL = "http://localhost:4321" } = loadEnv(
+const { SITE_URL = "https://aitech8.com" } = loadEnv(
   process.env.NODE_ENV ?? "production",
   process.cwd(),
   "SITE_URL",
