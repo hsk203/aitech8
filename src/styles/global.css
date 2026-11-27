@@ -6,13 +6,6 @@
   --font-Oxanium-Medium: "Oxanium-Medium", var(--font-body);
 }
 @font-face {
-  font-family: "ZaoZiGongFangYueYuan";
-  src: url("/fonts/ZaoZiGongFangYueYuan.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
   font-family: "Oxanium-Medium";
   src: url("/fonts/Oxanium-Medium.woff2") format("woff2");
   font-weight: 500 800;

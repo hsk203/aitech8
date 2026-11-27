@@ -39,7 +39,11 @@ const older = posts[index + 1];
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
-  ogImage={post.data.coverImage}
+  ogImage={
+    post.data.coverImage?.endsWith(".svg")
+      ? undefined
+      : post.data.coverImage
+  }
   heroTitle={t("article.heroTitle")}
   heroSubtitle={t("article.heroSubtitle")}
   article
