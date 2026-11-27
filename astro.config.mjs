@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import { satteri } from "@astrojs/markdown-satteri";
+import imgAttr from "satteri-imgattr";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
@@ -40,6 +42,15 @@ export default defineConfig({
   base: basePath === "" ? "/" : basePath,
   output: "static",
   trailingSlash: "always",
+  // Markdown: keep the default Sätteri processor, add lazy-loading to body
+  // images via its HAST plugin (2026-11-28; replaces the post-build script).
+  markdown: {
+    processor: satteri({
+      hastPlugins: [
+        imgAttr({ defaults: { loading: "lazy", decoding: "async" } }),
+      ],
+    }),
+  },
   // Preserve the spacing between inline elements when migrating from Astro 5.
   compressHTML: true,
   integrations: [
