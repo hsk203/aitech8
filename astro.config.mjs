@@ -45,6 +45,7 @@ export default defineConfig({
   // Markdown: keep the default Sätteri processor, add lazy-loading to body
   // images via its HAST plugin (2026-11-28; replaces the post-build script).
   markdown: {
+    // @ts-expect-error Sätteri 0.4.10 resolves Shiki 4.5 types while Astro resolves 4.6; keep the existing processor runtime unchanged.
     processor: satteri({
       hastPlugins: [
         imgAttr({ defaults: { loading: "lazy", decoding: "async" } }),

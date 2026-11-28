@@ -609,3 +609,119 @@ a.chip:hover {
 .prose a:hover {
   color: var(--accent-2);
 }
+
+/* AITech8 editorial redesign — visual layer only; existing routes and widgets stay intact. */
+:root {
+  --bg: #f6f8fd;
+  --card: #ffffff;
+  --text: #17213d;
+  --muted: #65718c;
+  --accent: #5b62f6;
+  --accent-2: #17b9b1;
+  --accent-3: #875cf2;
+  --accent-warm: #f39b78;
+  --accent-soft: #eef0ff;
+  --accent-3-soft: #f3edff;
+  --accent-gradient: linear-gradient(
+    112deg,
+    #5669f5 0%,
+    #805cf1 58%,
+    #36b9c4 100%
+  );
+  --line: #e3e8f3;
+  --radius-card: 18px;
+  --radius-panel: 15px;
+  --shadow: 0 12px 34px rgba(32, 48, 92, 0.055);
+  --shadow-hover: 0 18px 42px rgba(32, 48, 92, 0.11);
+}
+:root.dark {
+  --bg: #0b1020;
+  --card: #121a2d;
+  --text: #edf1ff;
+  --muted: #a0abc4;
+  --accent: #a3a9ff;
+  --accent-2: #56d6cb;
+  --accent-3: #c0a0ff;
+  --accent-warm: #ffb18d;
+  --accent-soft: #202747;
+  --accent-3-soft: #2c2347;
+  --accent-gradient: linear-gradient(
+    112deg,
+    #7c8aff 0%,
+    #a078ff 58%,
+    #54cfc9 100%
+  );
+  --line: #28334d;
+  --shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
+  --shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.32);
+}
+body {
+  background: var(--bg);
+  line-height: 1.72;
+}
+.shell {
+  max-width: 1320px;
+}
+.blog-grid {
+  grid-template-columns: 220px minmax(0, 1fr) 220px;
+  gap: 24px;
+  padding-top: 28px;
+}
+.card {
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+.panel {
+  padding: 20px;
+}
+.panel-title {
+  font-size: 13px;
+  letter-spacing: -0.01em;
+}
+.site-footer {
+  padding: 38px 20px 34px;
+  background: var(--card);
+  border-top: 1px solid var(--line);
+}
+.footer-mark {
+  font-size: 20px;
+}
+.page-heading h1 {
+  font-size: clamp(28px, 3vw, 36px);
+  letter-spacing: -0.04em;
+}
+.page-card {
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.prose {
+  max-width: 78ch;
+  font-size: 16px;
+  line-height: 1.9;
+}
+.prose h2 {
+  margin-top: 2.3em;
+  padding: 10px 15px;
+}
+.prose h3 {
+  margin-top: 1.8em;
+}
+.left-sidebar,
+.right-sidebar {
+  gap: 16px;
+}
+@media (max-width: 1100px) {
+  .blog-grid {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .blog-grid {
+    gap: 16px;
+    padding-top: 16px;
+  }
+  .page-card {
+    padding: 22px 18px;
+  }
+}

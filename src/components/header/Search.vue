@@ -3,8 +3,12 @@ import { t, formatDate } from "../../i18n";
 import { categoryLabel } from "../../data/post-options";
 import { ref, computed, onMounted, onUnmounted, nextTick } from "vue";
 import type { PostSummary } from "../../lib/posts";
+type SearchPost = Pick<
+  PostSummary,
+  "id" | "title" | "description" | "category" | "tags" | "date"
+>;
 import { withBase } from "../../lib/url";
-const props = defineProps<{ posts: PostSummary[] }>();
+const props = defineProps<{ posts: SearchPost[] }>();
 const dialog = ref<HTMLDialogElement>();
 const input = ref<HTMLInputElement>();
 const query = ref("");

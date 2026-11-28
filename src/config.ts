@@ -55,9 +55,18 @@ export const languageLabels: Record<Language, string> = {
   ja: "日本語",
 };
 
+type NavigationItem = {
+  icon: string;
+  label: string;
+  url: string;
+  children?: NavigationItem[];
+};
+
+const navigation = settings.navigation as NavigationItem[];
+
 export const headerConfig = {
   title: settings.site.logoText,
-  navLinks: settings.navigation.map(({ label, icon, url, children }) => ({
+  navLinks: navigation.map(({ label, icon, url, children }) => ({
     name: t(label as TranslationKey),
     icon,
     url: withBase(url),
