@@ -7,6 +7,23 @@ import { getPosts, summarize } from "../lib/posts";
 import { categoryNames, categoryLabel, categoryDescription } from "../data/post-options";
 import { withBase } from "../lib/url";
 const posts = (await getPosts()).map(summarize);
+// PostFeed only needs these fields — trim the rest to keep the serialized
+// props in the HTML small (the full summarize() spread includes every
+// frontmatter field; the posts array was ~28KB of the HTML).
+const feedPosts = posts.map(
+  ({ id, title, description, category, tags, date, cover, featured, coverImage, minutes }) => ({
+    id,
+    title,
+    description,
+    category,
+    tags,
+    date,
+    cover,
+    featured,
+    coverImage,
+    minutes,
+  }),
+);
 ---
 
 <BlogLayout home>
@@ -32,7 +49,7 @@ const posts = (await getPosts()).map(summarize);
       ))}
     </div>
   </section>
-  <PostFeed posts={posts} client:load />
+  <PostFeed posts={feedPosts} client:visible />
   <PostListFallback posts={posts} />
   <p class="impact-verification" aria-hidden="true">
     Impact-Site-Verification: debcc67c-f25b-4c06-930a-8f3ea9e19919

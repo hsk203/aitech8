@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1026"/>
+      <stop offset="1" stop-color="#1b2a5e"/>
+    </linearGradient>
+    <linearGradient id="lap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4f7cff"/>
+      <stop offset="1" stop-color="#7c5cff"/>
+    </linearGradient>
+    <linearGradient id="mod" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c1a3"/>
+      <stop offset="1" stop-color="#4f7cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="90" r="180" fill="#4f7cff" opacity="0.12"/>
+  <circle cx="90" cy="560" r="150" fill="#22c1a3" opacity="0.10"/>
+  <text x="600" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="bold" fill="#ffffff">Six Spare Macs, One Private LLM</text>
+  <text x="600" y="136" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#c7d2e8">EXO pools old MacBooks into a single AI cluster</text>
+  <!-- laptops row -->
+  <g>
+    <rect x="90" y="220" width="150" height="100" rx="10" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="100" y="230" width="130" height="70" rx="6" fill="url(#lap)" opacity="0.85"/>
+    <rect x="80" y="320" width="170" height="10" rx="5" fill="#8fa3c8"/>
+    <rect x="270" y="220" width="150" height="100" rx="10" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="280" y="230" width="130" height="70" rx="6" fill="url(#lap)" opacity="0.85"/>
+    <rect x="260" y="320" width="170" height="10" rx="5" fill="#8fa3c8"/>
+    <rect x="450" y="220" width="150" height="100" rx="10" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="460" y="230" width="130" height="70" rx="6" fill="url(#lap)" opacity="0.85"/>
+    <rect x="440" y="320" width="170" height="10" rx="5" fill="#8fa3c8"/>
+    <rect x="630" y="220" width="150" height="100" rx="10" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="640" y="230" width="130" height="70" rx="6" fill="url(#lap)" opacity="0.85"/>
+    <rect x="620" y="320" width="170" height="10" rx="5" fill="#8fa3c8"/>
+    <rect x="810" y="220" width="150" height="100" rx="10" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="820" y="230" width="130" height="70" rx="6" fill="url(#lap)" opacity="0.85"/>
+    <rect x="800" y="320" width="170" height="10" rx="5" fill="#8fa3c8"/>
+    <rect x="990" y="220" width="150" height="100" rx="10" fill="#ffffff" opacity="0.07" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+    <rect x="1000" y="230" width="130" height="70" rx="6" fill="url(#lap)" opacity="0.85"/>
+    <rect x="980" y="320" width="170" height="10" rx="5" fill="#8fa3c8"/>
+    <!-- thunderbolt links -->
+    <line x1="240" y1="270" x2="270" y2="270" stroke="#22c1a3" stroke-width="4"/>
+    <line x1="420" y1="270" x2="450" y2="270" stroke="#22c1a3" stroke-width="4"/>
+    <line x1="600" y1="270" x2="630" y2="270" stroke="#22c1a3" stroke-width="4"/>
+    <line x1="780" y1="270" x2="810" y2="270" stroke="#22c1a3" stroke-width="4"/>
+    <line x1="960" y1="270" x2="990" y2="270" stroke="#22c1a3" stroke-width="4"/>
+  </g>
+  <!-- converging lines to model chip -->
+  <g stroke="#22c1a3" stroke-width="3" opacity="0.8">
+    <line x1="165" y1="330" x2="600" y2="430"/>
+    <line x1="345" y1="330" x2="600" y2="430"/>
+    <line x1="525" y1="330" x2="600" y2="430"/>
+    <line x1="705" y1="330" x2="600" y2="430"/>
+    <line x1="885" y1="330" x2="600" y2="430"/>
+    <line x1="1065" y1="330" x2="600" y2="430"/>
+  </g>
+  <rect x="420" y="420" width="360" height="110" rx="16" fill="url(#mod)"/>
+  <text x="600" y="468" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#ffffff">Qwen3-30B-A3B</text>
+  <text x="600" y="505" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#eaf2ff">96 GB pooled memory · ~20 tokens/sec · fully private</text>
+  <text x="600" y="585" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#8fa3c8">aitech8.com</text>
+</svg>
