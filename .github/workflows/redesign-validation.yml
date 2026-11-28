@@ -6,7 +6,7 @@ on:
       - redesign/professional-ai-editorial
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build:
@@ -23,7 +23,17 @@ jobs:
           node-version-file: .node-version
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Check formatting of redesigned files
+      - name: Format redesigned files
+        run: |
+          pnpm exec prettier --write src/pages/index.astro 'src/pages/posts/[...id].astro' src/layouts/BlogLayout.astro src/components/header/Welcome.astro src/components/header/Navigation.vue src/styles/global.css src/site.config.json src/i18n/en.json
+          if ! git diff --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/pages/index.astro 'src/pages/posts/[...id].astro' src/layouts/BlogLayout.astro src/components/header/Welcome.astro src/components/header/Navigation.vue src/styles/global.css src/site.config.json src/i18n/en.json
+            git commit -m "Format redesigned AITech8 files"
+            git push
+          fi
+      - name: Verify formatting of redesigned files
         run: pnpm exec prettier --check src/pages/index.astro 'src/pages/posts/[...id].astro' src/layouts/BlogLayout.astro src/components/header/Welcome.astro src/components/header/Navigation.vue src/styles/global.css src/site.config.json src/i18n/en.json
       - name: Build English site
         run: pnpm build
