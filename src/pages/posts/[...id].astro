@@ -143,7 +143,7 @@ const older = posts[index + 1];
           )}
         </section>
       )}
-      <details class="mobile-toc">
+      <details class="mobile-toc" id="mobile-toc-origin">
         <summary>{t("article.toc")}</summary>
         <ol>
           {headings
@@ -155,6 +155,7 @@ const older = posts[index + 1];
             ))}
         </ol>
       </details>
+      <div class="ad-slot ad-slot-inline" data-ad-slot="article-top" aria-label="Advertisement"><span>ADVERTISEMENT</span></div>
       <div class="prose" id="article-body">
         <Content />
       </div>
@@ -277,7 +278,18 @@ const older = posts[index + 1];
           })()}
         </ol>
       </nav>
+      <div class="ad-slot ad-slot-sidebar" data-ad-slot="article-sidebar" aria-label="Advertisement"><span>ADVERTISEMENT</span></div>
     </aside>
+  </div>
+  <div class="mobile-toc-float" id="mobile-toc-float" aria-hidden="true">
+    <button class="mobile-toc-trigger" id="mobile-toc-trigger" type="button" aria-expanded="false" aria-controls="mobile-toc-panel">
+      <span class="icon-[lucide--list]" aria-hidden="true"></span>
+      <span id="mobile-toc-current">{t("article.toc")}</span>
+      <span class="icon-[lucide--chevron-down]" aria-hidden="true"></span>
+    </button>
+    <nav class="mobile-toc-panel" id="mobile-toc-panel" aria-label={t("article.toc")} hidden>
+      <ol>{headings.filter((h) => h.depth <= 3).map((h) => <li><a href={`#${h.slug}`} data-heading={h.slug}>{h.text}</a></li>)}</ol>
+    </nav>
   </div>
   <script>
     import { t } from "../../i18n";
@@ -286,6 +298,7 @@ const older = posts[index + 1];
     const tocLinks = [
       ...document.querySelectorAll<HTMLAnchorElement>("[data-heading]"),
     ];
+    const mobileCurrent = document.querySelector<HTMLElement>("#mobile-toc-current");
     const update = () => {
       if (!body || !progress) return;
       const top = body.getBoundingClientRect().top + window.scrollY;
@@ -307,11 +320,48 @@ const older = posts[index + 1];
           ? link.setAttribute("aria-current", "location")
           : link.removeAttribute("aria-current");
       });
+      const currentLink = tocLinks.find((link) => link.dataset.heading === current);
+      if (mobileCurrent && currentLink) mobileCurrent.textContent = currentLink.textContent?.trim() || t("article.toc");
     };
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     update();
     const tocNav = document.querySelector<HTMLElement>("nav.toc");
+    const mobileFloat = document.querySelector<HTMLElement>("#mobile-toc-float");
+    const mobileOrigin = document.querySelector<HTMLElement>("#mobile-toc-origin");
+    const mobileTrigger = document.querySelector<HTMLButtonElement>("#mobile-toc-trigger");
+    const mobilePanel = document.querySelector<HTMLElement>("#mobile-toc-panel");
+    const closeMobileToc = () => {
+      mobileFloat?.classList.remove("is-open");
+      mobileTrigger?.setAttribute("aria-expanded", "false");
+      if (mobilePanel) mobilePanel.hidden = true;
+    };
+    mobileTrigger?.addEventListener("click", () => {
+      const open = mobileTrigger.getAttribute("aria-expanded") !== "true";
+      mobileTrigger.setAttribute("aria-expanded", String(open));
+      mobileFloat?.classList.toggle("is-open", open);
+      if (mobilePanel) mobilePanel.hidden = !open;
+    });
+    mobilePanel?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMobileToc));
+    if (mobileOrigin && mobileFloat && "IntersectionObserver" in window) {
+      const tocObserver = new IntersectionObserver(([entry]) => {
+        const pastOrigin = !entry.isIntersecting && entry.boundingClientRect.top < 72;
+        mobileFloat.classList.toggle("is-visible", pastOrigin);
+        mobileFloat.setAttribute("aria-hidden", String(!pastOrigin));
+        if (!pastOrigin) closeMobileToc();
+      }, { threshold: 0, rootMargin: "-72px 0px 0px 0px" });
+      tocObserver.observe(mobileOrigin);
+    }
+    const paragraphs = body?.querySelectorAll<HTMLElement>(":scope > p");
+    if (body && paragraphs && paragraphs.length >= 4) {
+      const middle = paragraphs[Math.floor(paragraphs.length / 2)];
+      const ad = document.createElement("aside");
+      ad.className = "ad-slot ad-slot-inline ad-slot-middle";
+      ad.dataset.adSlot = "article-middle";
+      ad.setAttribute("aria-label", "Advertisement");
+      ad.innerHTML = "<span>ADVERTISEMENT</span>";
+      middle?.after(ad);
+    }
     document.querySelector("#toc-collapse")?.addEventListener("click", () => {
       tocNav?.classList.toggle("toc-collapsed");
     });
@@ -779,5 +829,52 @@ const older = posts[index + 1];
       font-size: clamp(27px, 7vw, 34px);
       line-height: 1.3;
     }
+  }
+</style>
+
+
+<style>
+  .article-layout { max-width: 1240px; grid-template-columns: minmax(0, 1fr) 276px; gap: 30px; padding-top: 28px; }
+  .article-detail { order: 1; padding: clamp(24px, 4vw, 48px); border: 1px solid var(--line); border-top: 3px solid var(--accent); background: var(--card); box-shadow: 0 18px 50px rgba(30,42,80,.055); }
+  .article-sidebar { order: 2; top: 94px; gap: 16px; align-self: start; }
+  .article-sidebar .toc { max-height: calc(100vh - 118px); overflow-y: auto; padding: 18px; border-radius: 16px; box-shadow: 0 10px 30px rgba(30,42,80,.045); }
+  .article-sidebar .toc ol { max-height: min(54vh, 520px); overflow-y: auto; }
+  .toc-header { background: transparent; padding: 0 0 12px; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .toc-header-pill { background: transparent; color: var(--text); padding: 4px 0; font-size: 12px; }
+  .toc-header-pill > span { color: var(--accent); }
+  .toc a { font-size: 11px; line-height: 1.55; }
+  .ad-slot { display:flex; align-items:center; justify-content:center; min-height:104px; margin:28px 0; border:1px dashed color-mix(in srgb,var(--muted) 32%,var(--line)); border-radius:12px; background:color-mix(in srgb,var(--bg) 72%,var(--card)); color:var(--muted); }
+  .ad-slot span { font:9px "Oxanium-Medium",var(--font-body); letter-spacing:.16em; opacity:.65; }
+  .ad-slot-sidebar { min-height:250px; margin:0; }
+  .ad-slot-middle { min-height:250px; margin:32px 0; }
+  .mobile-toc-float { display:none; }
+  @media(max-width:1000px) {
+    .article-layout { grid-template-columns:minmax(0,1fr) 248px; gap:20px; }
+    .article-detail { padding:28px; }
+  }
+  @media(max-width:900px) {
+    .article-layout { display:block; max-width:800px; }
+    .article-detail { padding:clamp(22px,4vw,34px); }
+    .article-sidebar { display:none; }
+    .mobile-toc-float { display:block; position:fixed; z-index:39; top:62px; left:0; right:0; padding:0 12px; opacity:0; visibility:hidden; transform:translateY(-8px); transition:opacity .18s,transform .18s,visibility .18s; pointer-events:none; }
+    .mobile-toc-float.is-visible { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+    .mobile-toc-trigger { width:min(100%,760px); min-height:46px; margin:0 auto; display:flex; align-items:center; gap:10px; padding:0 15px; border:1px solid var(--line); border-radius:0 0 13px 13px; background:color-mix(in srgb,var(--card) 96%,transparent); color:var(--text); box-shadow:0 8px 24px rgba(20,30,60,.12); text-align:left; font-size:12px; font-weight:650; }
+    .mobile-toc-trigger > span:nth-child(2) { flex:1; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+    .mobile-toc-trigger > span:first-child { color:var(--accent); font-size:16px; }
+    .mobile-toc-trigger > span:last-child { color:var(--muted); transition:transform .18s; }
+    .mobile-toc-float.is-open .mobile-toc-trigger > span:last-child { transform:rotate(180deg); }
+    .mobile-toc-panel { width:min(100%,760px); max-height:min(56vh,440px); overflow:auto; margin:0 auto; padding:8px 16px 14px; border:1px solid var(--line); border-top:0; border-radius:0 0 13px 13px; background:var(--card); box-shadow:0 12px 28px rgba(20,30,60,.13); }
+    .mobile-toc-panel[hidden] { display:none; }
+    .mobile-toc-panel ol { margin:0; padding:0; list-style:none; }
+    .mobile-toc-panel li { margin:2px 0; }
+    .mobile-toc-panel a { display:block; padding:8px 9px; border-radius:7px; color:var(--muted); font-size:12px; }
+    .mobile-toc-panel a.active { color:var(--accent); background:var(--accent-soft); }
+  }
+  @media(max-width:760px) {
+    .article-detail { padding:22px 18px; }
+    .article-cover { height:190px; }
+    .reading-progress { top:62px; }
+    .ad-slot { min-height:90px; margin:24px 0; }
+    .ad-slot-middle { min-height:180px; }
   }
 </style>

@@ -10,15 +10,22 @@ interface Props {
   heroSubtitle?: string;
   home?: boolean;
 }
+const { home = false } = Astro.props;
 const posts = (await getPosts()).map(summarize);
 ---
 
 <BaseLayout {...Astro.props}>
-  <div class="shell blog-grid">
-    <LeftSidebar posts={posts} />
-    <div class="page-content">
+  {home ? (
+    <div class="shell home-shell">
       <slot />
     </div>
-    <RightSidebar posts={posts} />
-  </div>
+  ) : (
+    <div class="shell blog-grid">
+      <LeftSidebar posts={posts} />
+      <div class="page-content">
+        <slot />
+      </div>
+      <RightSidebar posts={posts} />
+    </div>
+  )}
 </BaseLayout>
