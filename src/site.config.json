@@ -76,15 +76,9 @@
         "AI tools for content teams",
         "AI workflow tutorials"
       ],
-      "ja": [
-        "AI tools guide"
-      ],
-      "zh-CN": [
-        "AI tools guide"
-      ],
-      "zh-Hant": [
-        "AI tools guide"
-      ]
+      "ja": ["AI tools guide"],
+      "zh-CN": ["AI tools guide"],
+      "zh-Hant": ["AI tools guide"]
     },
     "logoText": "AITech8",
     "name": "AITech8"

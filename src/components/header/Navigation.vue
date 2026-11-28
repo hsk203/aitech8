@@ -55,8 +55,8 @@ onUnmounted(() => {
         :href="homeUrl"
         class="brand"
         :aria-label="t('nav.brandHome', { site: headerConfig.title })"
-        ><span class="brand-mark" aria-hidden="true">A8</span>{{ headerConfig.title
-        }}<span class="brand-dot">.</span></a
+        ><span class="brand-mark" aria-hidden="true">A8</span
+        >{{ headerConfig.title }}<span class="brand-dot">.</span></a
       >
       <nav
         :aria-label="t('nav.main')"
@@ -190,8 +190,10 @@ onUnmounted(() => {
   border-radius: 10px;
   color: #fff;
   background: linear-gradient(135deg, #6675ff, #8b62ed);
-  font: 700 13px "Oxanium-Medium", var(--font-body);
-  letter-spacing: -.08em;
+  font:
+    700 13px "Oxanium-Medium",
+    var(--font-body);
+  letter-spacing: -0.08em;
   box-shadow: 0 5px 16px #5663f455;
 }
 .brand-dot {
@@ -211,7 +213,7 @@ nav a {
   padding: 22px 11px;
   font-size: 12px;
   font-weight: 650;
-  letter-spacing: .01em;
+  letter-spacing: 0.01em;
   opacity: 0.85;
 }
 nav a:hover,
@@ -445,10 +447,18 @@ nav a.active::after {
 }
 
 @media (min-width: 761px) and (max-width: 1080px) {
-  .nav-inner { gap: 14px; }
-  .brand { font-size: 23px; }
-  nav { display: none; }
-  .nav-actions .menu-toggle { display: grid; }
+  .nav-inner {
+    gap: 14px;
+  }
+  .brand {
+    font-size: 23px;
+  }
+  nav {
+    display: none;
+  }
+  .nav-actions .menu-toggle {
+    display: grid;
+  }
   nav.expanded {
     display: flex;
     flex-direction: column;
@@ -465,9 +475,16 @@ nav a.active::after {
     color: var(--text);
     box-shadow: var(--shadow);
   }
-  nav.expanded a { padding: 12px 16px; border-radius: 8px; }
-  nav.expanded a.active { background: var(--accent-soft); color: var(--accent); }
-  nav.expanded a.active::after { display: none; }
+  nav.expanded a {
+    padding: 12px 16px;
+    border-radius: 8px;
+  }
+  nav.expanded a.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  nav.expanded a.active::after {
+    display: none;
+  }
 }
-
 </style>

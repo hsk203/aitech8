@@ -12,12 +12,40 @@ const posts = (await getPosts()).map(summarize);
 const featured = posts.filter((post) => post.featured).slice(0, 3);
 const featuredPosts = featured.length ? featured : posts.slice(0, 3);
 const feedPosts = posts.map(
-  ({ id, title, description, category, tags, date, cover, featured, coverImage, minutes }) => ({
-    id, title, description, category, tags, date, cover, featured, coverImage, minutes,
+  ({
+    id,
+    title,
+    description,
+    category,
+    tags,
+    date,
+    cover,
+    featured,
+    coverImage,
+    minutes,
+  }) => ({
+    id,
+    title,
+    description,
+    category,
+    tags,
+    date,
+    cover,
+    featured,
+    coverImage,
+    minutes,
   }),
 );
-const comparisons = posts.filter((post) => post.category === "comparisons" || post.category === "reviews").slice(0, 3);
-const workflows = posts.filter((post) => post.category === "tutorials" || post.category === "workflows").slice(0, 3);
+const comparisons = posts
+  .filter(
+    (post) => post.category === "comparisons" || post.category === "reviews",
+  )
+  .slice(0, 3);
+const workflows = posts
+  .filter(
+    (post) => post.category === "tutorials" || post.category === "workflows",
+  )
+  .slice(0, 3);
 ---
 
 <BlogLayout home>
@@ -26,15 +54,28 @@ const workflows = posts.filter((post) => post.category === "tutorials" || post.c
       <div>
         <span class="eyebrow">EDITOR'S PICKS</span>
         <h2 id="featured-heading">Start with the useful stuff.</h2>
-        <p>Independent research and practical guidance for choosing and using AI tools.</p>
+        <p>
+          Independent research and practical guidance for choosing and using AI
+          tools.
+        </p>
       </div>
-      <a class="home-text-link" href={withBase("/posts/")}>Explore all AI tools <span aria-hidden="true">→</span></a>
+      <a class="home-text-link" href={withBase("/posts/")}>
+        Explore all AI tools <span aria-hidden="true">→</span>
+      </a>
     </div>
     <div class="featured-grid">
       {featuredPosts.map((post, index) => (
-        <a class:list={["featured-card", { "featured-card-lead": index === 0 }]} href={withBase(`/posts/${post.id}/`)}>
+        <a
+          class:list={["featured-card", { "featured-card-lead": index === 0 }]}
+          href={withBase(`/posts/${post.id}/`)}
+        >
           <div class="featured-cover">
-            <PostCover kind={post.cover} featured={post.featured || index === 0} image={post.coverImage} alt={post.title} />
+            <PostCover
+              kind={post.cover}
+              featured={post.featured || index === 0}
+              image={post.coverImage}
+              alt={post.title}
+            />
           </div>
           <div class="featured-copy">
             <div class="post-kicker">
@@ -44,14 +85,20 @@ const workflows = posts.filter((post) => post.category === "tutorials" || post.c
             </div>
             <h3>{post.title}</h3>
             <p>{post.description}</p>
-            <span class="featured-read">Read the analysis <span aria-hidden="true">↗</span></span>
+            <span class="featured-read">
+              Read the analysis <span aria-hidden="true">↗</span>
+            </span>
           </div>
         </a>
       ))}
     </div>
   </section>
 
-  <div class="home-ad-slot" aria-label="Advertisement placement" data-ad-slot="home-featured">
+  <div
+    class="home-ad-slot"
+    aria-label="Advertisement placement"
+    data-ad-slot="home-featured"
+  >
     <span>ADVERTISEMENT</span>
   </div>
 
@@ -62,7 +109,9 @@ const workflows = posts.filter((post) => post.category === "tutorials" || post.c
         <h2>Latest articles</h2>
         <p>New comparisons, explainers, and workflows from AITech8.</p>
       </div>
-      <a class="home-text-link" href={withBase("/posts/")}>View archive <span aria-hidden="true">→</span></a>
+      <a class="home-text-link" href={withBase("/posts/")}>
+        View archive <span aria-hidden="true">→</span>
+      </a>
     </div>
     <PostFeed posts={feedPosts} client:visible />
     <PostListFallback posts={posts} />
@@ -70,32 +119,58 @@ const workflows = posts.filter((post) => post.category === "tutorials" || post.c
 
   <section class="home-topic-grid" aria-label="Explore topics">
     <article class="topic-panel topic-comparisons">
-      <div class="topic-icon" aria-hidden="true"><span class="icon-[lucide--scale]"></span></div>
+      <div class="topic-icon" aria-hidden="true">
+        <span class="icon-[lucide--scale]"></span>
+      </div>
       <span class="eyebrow">CHOOSE WITH CONFIDENCE</span>
       <h2>AI Tools &amp; Comparisons</h2>
-      <p>Compare features, pricing, free-plan limits, and real-world trade-offs before you commit.</p>
+      <p>
+        Compare features, pricing, free-plan limits, and real-world trade-offs
+        before you commit.
+      </p>
       <div class="topic-links">
-        <a href={withBase("/category/comparisons/")}>Tool comparisons <span>↗</span></a>
-        <a href={withBase("/category/reviews/")}>In-depth reviews <span>↗</span></a>
+        <a href={withBase("/category/comparisons/")}>
+          Tool comparisons <span>↗</span>
+        </a>
+        <a href={withBase("/category/reviews/")}>
+          In-depth reviews <span>↗</span>
+        </a>
       </div>
       {comparisons.length > 0 && (
         <ul class="topic-article-list">
-          {comparisons.map((post) => <li><a href={withBase(`/posts/${post.id}/`)}>{post.title}</a></li>)}
+          {comparisons.map((post) => (
+            <li>
+              <a href={withBase(`/posts/${post.id}/`)}>{post.title}</a>
+            </li>
+          ))}
         </ul>
       )}
     </article>
     <article class="topic-panel topic-workflows">
-      <div class="topic-icon" aria-hidden="true"><span class="icon-[lucide--workflow]"></span></div>
+      <div class="topic-icon" aria-hidden="true">
+        <span class="icon-[lucide--workflow]"></span>
+      </div>
       <span class="eyebrow">PUT AI TO WORK</span>
       <h2>AI Tutorials &amp; Workflows</h2>
-      <p>Follow practical, step-by-step guides and connect tools into workflows that get real work done.</p>
+      <p>
+        Follow practical, step-by-step guides and connect tools into workflows
+        that get real work done.
+      </p>
       <div class="topic-links">
-        <a href={withBase("/category/tutorials/")}>Step-by-step tutorials <span>↗</span></a>
-        <a href={withBase("/category/workflows/")}>Practical workflows <span>↗</span></a>
+        <a href={withBase("/category/tutorials/")}>
+          Step-by-step tutorials <span>↗</span>
+        </a>
+        <a href={withBase("/category/workflows/")}>
+          Practical workflows <span>↗</span>
+        </a>
       </div>
       {workflows.length > 0 && (
         <ul class="topic-article-list">
-          {workflows.map((post) => <li><a href={withBase(`/posts/${post.id}/`)}>{post.title}</a></li>)}
+          {workflows.map((post) => (
+            <li>
+              <a href={withBase(`/posts/${post.id}/`)}>{post.title}</a>
+            </li>
+          ))}
         </ul>
       )}
     </article>
@@ -105,69 +180,348 @@ const workflows = posts.filter((post) => post.category === "tutorials" || post.c
     <div>
       <span class="eyebrow">THE AITECH8 APPROACH</span>
       <h2>Less hype. More useful answers.</h2>
-      <p>We look beyond feature lists to explain what AI tools cost, where their limits are, and how they fit into real workflows.</p>
+      <p>
+        We look beyond feature lists to explain what AI tools cost, where their
+        limits are, and how they fit into real workflows.
+      </p>
     </div>
-    <a class="home-about-link" href={withBase("/about/")}>About AITech8 <span aria-hidden="true">→</span></a>
+    <a class="home-about-link" href={withBase("/about/")}>
+      About AITech8 <span aria-hidden="true">→</span>
+    </a>
   </section>
 
-  <p class="impact-verification" aria-hidden="true">Impact-Site-Verification: debcc67c-f25b-4c06-930a-8f3ea9e19919</p>
-  <p class="impact-verification" aria-hidden="true">Impact-Site-Verification: 5ca0ccb5-e829-4b08-8ace-8b736ae24b3d</p>
+  <p class="impact-verification" aria-hidden="true">
+    Impact-Site-Verification: debcc67c-f25b-4c06-930a-8f3ea9e19919
+  </p>
+  <p class="impact-verification" aria-hidden="true">
+    Impact-Site-Verification: 5ca0ccb5-e829-4b08-8ace-8b736ae24b3d
+  </p>
 </BlogLayout>
 
 <style>
-  .home-shell { padding-top: 0; padding-bottom: 76px; }
-  .home-featured, .home-latest, .home-topic-grid, .home-about { margin: 0 0 62px; }
-  .home-section-heading { display:flex; align-items:end; justify-content:space-between; gap:24px; margin:0 0 22px; }
-  .home-section-heading h2, .home-about h2 { margin:7px 0 6px; font-size:clamp(24px,3vw,34px); line-height:1.2; letter-spacing:-.04em; color:var(--text); }
-  .home-section-heading p, .home-about p { max-width:62ch; margin:0; color:var(--muted); font-size:14px; }
-  .home-text-link, .home-about-link { display:inline-flex; align-items:center; gap:9px; color:var(--accent); font-size:13px; font-weight:700; white-space:nowrap; }
-  .home-text-link:hover, .home-about-link:hover { gap:14px; }
-  .featured-grid { display:grid; grid-template-columns:1.18fr 1fr 1fr; gap:18px; }
-  .featured-card { display:flex; flex-direction:column; min-width:0; overflow:hidden; border:1px solid var(--line); border-radius:20px; background:var(--card); box-shadow:var(--shadow); transition:transform .2s,border-color .2s,box-shadow .2s; }
-  .featured-card:hover { transform:translateY(-4px); border-color:color-mix(in srgb,var(--accent) 38%,var(--line)); box-shadow:var(--shadow-hover); }
-  .featured-cover { height:172px; overflow:hidden; background:var(--accent-soft); }
-  .featured-card-lead .featured-cover { height:205px; }
-  .featured-cover :global(.post-cover), .featured-cover :global(.cover-image) { min-height:100%; height:100%; }
-  .featured-copy { padding:19px 20px 21px; }
-  .post-kicker { display:flex; align-items:center; gap:8px; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.07em; }
-  .post-kicker > span:first-child { color:var(--accent); font-weight:700; }
-  .featured-copy h3 { margin:11px 0 8px; font-size:17px; line-height:1.42; letter-spacing:-.025em; color:var(--text); }
-  .featured-card-lead .featured-copy h3 { font-size:21px; }
-  .featured-copy p { margin:0; color:var(--muted); font-size:12px; line-height:1.7; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-  .featured-read { display:inline-flex; gap:8px; margin-top:17px; color:var(--accent); font-size:11px; font-weight:700; }
-  .home-ad-slot { display:flex; align-items:center; justify-content:center; min-height:90px; margin:0 0 58px; border:1px dashed color-mix(in srgb,var(--muted) 32%,var(--line)); border-radius:14px; background:color-mix(in srgb,var(--card) 72%,var(--bg)); color:var(--muted); }
-  .home-ad-slot span { font:10px "Oxanium-Medium",var(--font-body); letter-spacing:.16em; opacity:.65; }
-  .compact-heading { margin-bottom:16px; }
-  .home-latest :global(.feed-title) { display:none; }
-  .home-latest :global(.post-feed) { margin:0; }
-  .home-topic-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .topic-panel { position:relative; overflow:hidden; padding:30px; border:1px solid var(--line); border-radius:22px; background:var(--card); box-shadow:var(--shadow); }
-  .topic-panel::after { content:""; position:absolute; width:190px; height:190px; right:-90px; top:-100px; border:1px solid color-mix(in srgb,var(--accent) 25%,transparent); border-radius:50%; box-shadow:0 0 0 22px color-mix(in srgb,var(--accent) 5%,transparent),0 0 0 46px color-mix(in srgb,var(--accent) 4%,transparent); pointer-events:none; }
-  .topic-workflows::after { border-color:color-mix(in srgb,var(--accent-2) 30%,transparent); }
-  .topic-icon { display:grid; place-items:center; width:44px; height:44px; margin-bottom:22px; border-radius:14px; background:var(--accent-soft); color:var(--accent); font-size:22px; }
-  .topic-workflows .topic-icon { color:var(--accent-2); background:color-mix(in srgb,var(--accent-2) 12%,var(--card)); }
-  .topic-panel h2 { margin:8px 0; font-size:23px; line-height:1.2; letter-spacing:-.035em; }
-  .topic-panel > p { max-width:48ch; color:var(--muted); font-size:13px; margin:0 0 20px; }
-  .topic-links { display:flex; flex-wrap:wrap; gap:9px; }
-  .topic-links a { display:inline-flex; gap:9px; align-items:center; padding:8px 12px; border-radius:9px; background:var(--accent-soft); color:var(--accent); font-size:11px; font-weight:700; }
-  .topic-workflows .topic-links a { background:color-mix(in srgb,var(--accent-2) 12%,var(--card)); color:var(--accent-2); }
-  .topic-article-list { margin:21px 0 0; padding:15px 0 0 17px; border-top:1px solid var(--line); color:var(--muted); }
-  .topic-article-list li { margin:7px 0; font-size:12px; }
-  .topic-article-list a:hover { color:var(--accent); }
-  .home-about { display:flex; align-items:center; justify-content:space-between; gap:28px; padding:30px 34px; border:1px solid color-mix(in srgb,var(--accent) 18%,var(--line)); border-radius:20px; background:linear-gradient(110deg,color-mix(in srgb,var(--accent) 8%,var(--card)),var(--card) 75%); }
-  .home-about h2 { font-size:25px; }
-  .home-about p { font-size:13px; }
-  .impact-verification { display:none; }
-  @media(max-width:980px) { .featured-grid { grid-template-columns:1fr 1fr; } .featured-card-lead { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; } .featured-card-lead .featured-cover { height:100%; min-height:220px; } }
-  @media(max-width:680px) {
-    .home-shell { padding-left:16px; padding-right:16px; padding-bottom:44px; }
-    .home-featured,.home-latest,.home-topic-grid,.home-about { margin-bottom:42px; }
-    .home-section-heading { align-items:start; flex-direction:column; gap:12px; }
-    .home-section-heading h2 { font-size:27px; }
-    .featured-grid,.home-topic-grid { grid-template-columns:1fr; }
-    .featured-card-lead { display:flex; grid-column:auto; }
-    .featured-card-lead .featured-cover,.featured-cover { height:180px; min-height:0; }
-    .featured-copy,.topic-panel { padding:20px; }
-    .home-about { align-items:start; flex-direction:column; padding:24px; }
+  .home-shell {
+    padding-top: 0;
+    padding-bottom: 76px;
+  }
+  .home-featured,
+  .home-latest,
+  .home-topic-grid,
+  .home-about {
+    margin: 0 0 62px;
+  }
+  .home-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 0 0 22px;
+  }
+  .home-section-heading h2,
+  .home-about h2 {
+    margin: 7px 0 6px;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    color: var(--text);
+  }
+  .home-section-heading p,
+  .home-about p {
+    max-width: 62ch;
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  .home-text-link,
+  .home-about-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .home-text-link:hover,
+  .home-about-link:hover {
+    gap: 14px;
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1.18fr 1fr 1fr;
+    gap: 18px;
+  }
+  .featured-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+    transition:
+      transform 0.2s,
+      border-color 0.2s,
+      box-shadow 0.2s;
+  }
+  .featured-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+    box-shadow: var(--shadow-hover);
+  }
+  .featured-cover {
+    height: 172px;
+    overflow: hidden;
+    background: var(--accent-soft);
+  }
+  .featured-card-lead .featured-cover {
+    height: 205px;
+  }
+  .featured-cover :global(.post-cover),
+  .featured-cover :global(.cover-image) {
+    min-height: 100%;
+    height: 100%;
+  }
+  .featured-copy {
+    padding: 19px 20px 21px;
+  }
+  .post-kicker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .post-kicker > span:first-child {
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .featured-copy h3 {
+    margin: 11px 0 8px;
+    font-size: 17px;
+    line-height: 1.42;
+    letter-spacing: -0.025em;
+    color: var(--text);
+  }
+  .featured-card-lead .featured-copy h3 {
+    font-size: 21px;
+  }
+  .featured-copy p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .featured-read {
+    display: inline-flex;
+    gap: 8px;
+    margin-top: 17px;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .home-ad-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90px;
+    margin: 0 0 58px;
+    border: 1px dashed color-mix(in srgb, var(--muted) 32%, var(--line));
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--card) 72%, var(--bg));
+    color: var(--muted);
+  }
+  .home-ad-slot span {
+    font:
+      10px "Oxanium-Medium",
+      var(--font-body);
+    letter-spacing: 0.16em;
+    opacity: 0.65;
+  }
+  .compact-heading {
+    margin-bottom: 16px;
+  }
+  .home-latest :global(.feed-title) {
+    display: none;
+  }
+  .home-latest :global(.post-feed) {
+    margin: 0;
+  }
+  .home-topic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .topic-panel {
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+  }
+  .topic-panel::after {
+    content: "";
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    right: -90px;
+    top: -100px;
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 22px color-mix(in srgb, var(--accent) 5%, transparent),
+      0 0 0 46px color-mix(in srgb, var(--accent) 4%, transparent);
+    pointer-events: none;
+  }
+  .topic-workflows::after {
+    border-color: color-mix(in srgb, var(--accent-2) 30%, transparent);
+  }
+  .topic-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 22px;
+  }
+  .topic-workflows .topic-icon {
+    color: var(--accent-2);
+    background: color-mix(in srgb, var(--accent-2) 12%, var(--card));
+  }
+  .topic-panel h2 {
+    margin: 8px 0;
+    font-size: 23px;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+  }
+  .topic-panel > p {
+    max-width: 48ch;
+    color: var(--muted);
+    font-size: 13px;
+    margin: 0 0 20px;
+  }
+  .topic-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+  }
+  .topic-links a {
+    display: inline-flex;
+    gap: 9px;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 9px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .topic-workflows .topic-links a {
+    background: color-mix(in srgb, var(--accent-2) 12%, var(--card));
+    color: var(--accent-2);
+  }
+  .topic-article-list {
+    margin: 21px 0 0;
+    padding: 15px 0 0 17px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .topic-article-list li {
+    margin: 7px 0;
+    font-size: 12px;
+  }
+  .topic-article-list a:hover {
+    color: var(--accent);
+  }
+  .home-about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 30px 34px;
+    border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--line));
+    border-radius: 20px;
+    background: linear-gradient(
+      110deg,
+      color-mix(in srgb, var(--accent) 8%, var(--card)),
+      var(--card) 75%
+    );
+  }
+  .home-about h2 {
+    font-size: 25px;
+  }
+  .home-about p {
+    font-size: 13px;
+  }
+  .impact-verification {
+    display: none;
+  }
+  @media (max-width: 980px) {
+    .featured-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .featured-card-lead {
+      grid-column: 1/-1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .featured-card-lead .featured-cover {
+      height: 100%;
+      min-height: 220px;
+    }
+  }
+  @media (max-width: 680px) {
+    .home-shell {
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 44px;
+    }
+    .home-featured,
+    .home-latest,
+    .home-topic-grid,
+    .home-about {
+      margin-bottom: 42px;
+    }
+    .home-section-heading {
+      align-items: start;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .home-section-heading h2 {
+      font-size: 27px;
+    }
+    .featured-grid,
+    .home-topic-grid {
+      grid-template-columns: 1fr;
+    }
+    .featured-card-lead {
+      display: flex;
+      grid-column: auto;
+    }
+    .featured-card-lead .featured-cover,
+    .featured-cover {
+      height: 180px;
+      min-height: 0;
+    }
+    .featured-copy,
+    .topic-panel {
+      padding: 20px;
+    }
+    .home-about {
+      align-items: start;
+      flex-direction: column;
+      padding: 24px;
+    }
   }
 </style>
