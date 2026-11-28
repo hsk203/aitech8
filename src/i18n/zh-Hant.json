@@ -4,7 +4,7 @@
   "site.blogKeyword": "工具",
   "site.frontendKeyword": "AI 工具",
   "nav.home": "首頁",
-  "nav.posts": "工具",
+  "nav.posts": "AI 工具",
   "nav.messages": "留言",
   "nav.friends": "友鏈",
   "nav.about": "關於",
@@ -18,11 +18,11 @@
   "nav.openMenu": "打開菜單",
   "nav.closeMenu": "關閉菜單",
   "nav.languageSwitch": "简体中文",
-  "hero.title": "歡迎來到 {site}",
-  "hero.subtitle": "每個工具，都講清楚：是什麼、多少錢、怎麼用、國內能不能用。",
-  "hero.homeEyebrow": "TOOLS · GUIDES · ALTERNATIVES",
-  "hero.pageEyebrow": "A GUIDE TO AI TOOLS",
-  "hero.explore": "慢慢來，總會找到趁手的工具",
+  "hero.title": "更明智地選擇和使用 AI 工具",
+  "hero.subtitle": "獨立評測、核實過的價格資訊與實用工作流程，幫助你選對工具，並真正善用它們。",
+  "hero.homeEyebrow": "AI 工具 · 獨立研究 · 實用工作流程",
+  "hero.pageEyebrow": "實用 AI 工具研究",
+  "hero.explore": "探索最新內容",
   "hero.sideNote": "EVERY DAY IS A NEW PAGE",
   "home.greeting": "你好呀，這裡是出海 AI 工具中文指南，今天想找什麼工具？",
   "home.greetingBadge": "HAVE A NICE DAY",
@@ -326,5 +326,6 @@
   "contact.responseTitle": "回覆時間",
   "contact.responseBody": "我們會盡快回覆每一封郵件，通常在 3 個工作日內。如果超過一週沒有收到回覆，可能是郵件被誤判為垃圾郵件，您可以再發一次。",
   "contact.githubTitle": "GitHub",
-  "contact.githubBody": "您也可以通過本站頁腳的 GitHub 連結找到我們。"
+  "contact.githubBody": "您也可以通過本站頁腳的 GitHub 連結找到我們。",
+  "nav.contact": "聯絡"
 }
