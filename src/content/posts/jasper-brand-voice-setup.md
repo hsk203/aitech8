@@ -41,6 +41,8 @@ Think of it this way:
 
 A Brand Voice trained on your best product descriptions will not know your product specs. A Knowledge asset loaded with your spec sheets will not make your copy sound like you. You need both, and on Pro you have 5 Knowledge assets to split across products, pricing, and company facts. Plan the split before you start training — the assets are as scarce as the voices.
 
+One distinction worth keeping: Brand Voice is the written voice — how your copy sounds. The spoken voice is a separate tool category: if you need a clone of a real person's voice for narration or video, see our comparison of the [best AI voice cloning software](/posts/best-ai-voice-cloning-software/).
+
 ## Before you train: pick your two voices
 
 With only 2 voices on Pro, the choice of which voices to create is the most consequential decision in this tutorial. Do not create one voice per product line, one per channel, or one per writer. Two voices can cover most small teams if you choose them by the dimension that actually changes the writing:

@@ -28,7 +28,7 @@ Search for "Writesonic free plan" and you will find dozens of articles describin
 
 ## First, what changed: Writesonic is no longer just an AI writer
 
-Understanding the trial requires understanding what Writesonic sells now. The company has repositioned itself as an AI search-visibility platform. Article generation — the feature most people associate with Writesonic — is now a capped module inside each plan, alongside GEO tracking (how often your brand appears in ChatGPT, Gemini, and Google AI Overviews), site audits, and agentic workflows.
+Understanding the trial requires understanding what Writesonic sells now. The company has repositioned itself as an AI search-visibility platform. Article generation — the feature most people associate with Writesonic — is now a capped module inside each plan, alongside GEO tracking (how often your brand appears in ChatGPT, Gemini, and Google AI Overviews), site audits, and agentic workflows. Writesonic also sells a website chatbot, Botsonic — if your website itself needs to answer visitors, compare the [best AI chatbots for small business websites](/posts/best-ai-chatbot-small-business-website/), where Botsonic is the cheapest paid start.
 
 That repositioning explains the pricing. You are not buying a word allowance; you are buying a bundle in which articles are one component. The Starter plan's 15 AI articles a month looks small next to older word-based plans, because the plan's value is spread across articles, 50 tracked prompts, and 10 site audits. If you only need article generation and nothing else, the bundle is poor value. If you need all three, it starts to make sense. The trial is your chance to find out which of those you actually are — before paying.
 

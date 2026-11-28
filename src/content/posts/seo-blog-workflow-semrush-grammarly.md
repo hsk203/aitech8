@@ -68,7 +68,7 @@ Every article starts with a brief, and the brief is where most SEO content goes 
 
 **Time: 1–2 hours per article. Cost: unlimited standard AI articles are included; a boosted article consumes 1 of 5 monthly boosts.**
 
-**Step 6 — Draft from the brief, not from a blank prompt.** Generate the draft inside the toolkit, against the brief from Stage 1. The draft is a first pass, not a finished article. Expect to rewrite the introduction and the conclusion yourself — AI introductions are where generic phrasing concentrates, and the introduction is the part readers actually judge.
+**Step 6 — Draft from the brief, not from a blank prompt.** Generate the draft inside the toolkit, against the brief from Stage 1. If your raw material is a recording — a podcast episode or an interview — transcribe it first and draft from the transcript; our [best AI transcription software for podcasters](/posts/best-ai-transcription-software-podcasters/) compares the tools for that step. The draft is a first pass, not a finished article. Expect to rewrite the introduction and the conclusion yourself — AI introductions are where generic phrasing concentrates, and the introduction is the part readers actually judge.
 
 **Step 7 — Check coverage, not word count.** Before editing a single sentence, check the draft against the brief's coverage checklist. Every recommended heading should be present or deliberately cut. A 2,000-word draft that misses the section searchers actually want is worse than a 1,200-word draft that covers it. Word count is not a ranking factor; coverage is what the brief was for.
 
