@@ -372,7 +372,6 @@ nav a.active::after {
   backdrop-filter: blur(18px);
   box-shadow: 0 10px 32px color-mix(in srgb, var(--text) 9%, transparent);
 }
-.scrolled .brand-mark,
 .scrolled nav a.active,
 .menu-open nav a.active {
   color: var(--accent);
@@ -444,4 +443,31 @@ nav a.active::after {
     font-size: 14px;
   }
 }
+
+@media (min-width: 761px) and (max-width: 1080px) {
+  .nav-inner { gap: 14px; }
+  .brand { font-size: 23px; }
+  nav { display: none; }
+  .nav-actions .menu-toggle { display: grid; }
+  nav.expanded {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    position: absolute;
+    top: 72px;
+    right: 28px;
+    width: min(360px, calc(100vw - 56px));
+    padding: 9px;
+    border: 1px solid var(--line);
+    border-radius: 0 0 16px 16px;
+    background: var(--card);
+    color: var(--text);
+    box-shadow: var(--shadow);
+  }
+  nav.expanded a { padding: 12px 16px; border-radius: 8px; }
+  nav.expanded a.active { background: var(--accent-soft); color: var(--accent); }
+  nav.expanded a.active::after { display: none; }
+}
+
 </style>
