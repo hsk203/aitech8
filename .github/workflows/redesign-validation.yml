@@ -25,7 +25,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Format redesigned files
         run: |
-          pnpm exec prettier --write src/pages/index.astro 'src/pages/posts/[...id].astro' src/layouts/BlogLayout.astro src/components/header/Welcome.astro src/components/header/Navigation.vue src/components/header/Search.vue src/config.ts src/styles/global.css src/site.config.json src/i18n/en.json
+          pnpm exec prettier --write src/pages/index.astro 'src/pages/posts/[...id].astro' src/layouts/BlogLayout.astro src/components/header/Welcome.astro src/components/header/Navigation.vue src/components/header/Search.vue src/config.ts astro.config.mjs src/styles/global.css src/site.config.json src/i18n/en.json
           if ! git diff --quiet; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
