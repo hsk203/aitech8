@@ -4,7 +4,7 @@
   "site.blogKeyword": "ツール",
   "site.frontendKeyword": "AI ツール",
   "nav.home": "ホーム",
-  "nav.posts": "ツール",
+  "nav.posts": "AIツール",
   "nav.messages": "ゲストブック",
   "nav.friends": "リンク",
   "nav.about": "このサイトについて",
@@ -18,11 +18,11 @@
   "nav.openMenu": "メニューを開く",
   "nav.closeMenu": "メニューを閉じる",
   "nav.languageSwitch": "簡体中文",
-  "hero.title": "{site} へようこそ",
-  "hero.subtitle": "すべてのツールを解説：機能、料金、使い方、中国での利用可否。",
-  "hero.homeEyebrow": "TOOLS · GUIDES · ALTERNATIVES",
-  "hero.pageEyebrow": "A GUIDE TO AI TOOLS",
-  "hero.explore": "ゆっくり探せば、ぴったりのツールが見つかります",
+  "hero.title": "AIツールを、もっと賢く選び、活用する",
+  "hero.subtitle": "独立した比較検証、確認済みの料金情報、実践的なワークフローで、最適なツール選びと活用をサポートします。",
+  "hero.homeEyebrow": "AI TOOLS · RESEARCH · WORKFLOWS",
+  "hero.pageEyebrow": "AIツールの実践的なリサーチ",
+  "hero.explore": "最新の記事を見る",
   "hero.sideNote": "毎日が新しい一ページ",
   "home.greeting": "こんにちは！海外 AI ツールの中国語ガイドです。今日は何をお探しですか？",
   "home.greetingBadge": "よい一日を",
@@ -326,5 +326,6 @@
   "contact.responseTitle": "返信までの目安",
   "contact.responseBody": "すべてのメールにできるだけ早く返信するよう努めており、通常は3営業日以内に返信します。1週間以上返信がない場合は、迷惑メールと判定された可能性がありますので、もう一度お送りください。",
   "contact.githubTitle": "GitHub",
-  "contact.githubBody": "サイトのフッターにある GitHub リンクからもご連絡いただけます。"
+  "contact.githubBody": "サイトのフッターにある GitHub リンクからもご連絡いただけます。",
+  "nav.contact": "お問い合わせ"
 }
