@@ -8,9 +8,12 @@ import {
 import { withBase } from "../lib/url";
 import "../styles/global.css";
 import "@fontsource-variable/noto-sans";
-import "@fontsource-variable/noto-sans-jp";
-import "@fontsource-variable/noto-sans-sc";
 import "@fontsource-variable/jetbrains-mono";
+// NOTE (2026-11-27, LCP fix): noto-sans-jp / noto-sans-sc intentionally NOT
+// imported here. This is the English-only build; those two packages add
+// ~207KB of @font-face CSS (124 JP + 101 SC subsets) that no English page
+// uses, and the render-blocking CSS they bloat delays LCP. CJK text, if
+// any ever appears, falls back to system sans-serif via the font stack.
 import Navigation from "../components/header/Navigation.vue";
 import Welcome from "../components/header/Welcome.astro";
 import Search from "../components/header/Search.vue";
@@ -39,6 +42,16 @@ const {
   noindex = false,
 } = Astro.props;
 const posts = (await getPosts()).map(summarize);
+// Search only needs these fields — trim the rest (cover, minutes, etc.) to
+// keep the serialized props attribute small (was ~28KB of the HTML).
+const searchPosts = posts.map(({ id, title, description, category, tags, date }) => ({
+  id,
+  title,
+  description,
+  category,
+  tags,
+  date,
+}));
 const pageTitle = title
   ? `${title} · ${siteInfo.title}`
   : `${siteInfo.title} · ${siteInfo.titleSuffix}`;
@@ -52,16 +65,36 @@ const ogImageUrl = new URL(ogImage ?? welcomeConfig.bgImage, siteInfo.url);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q37MYTPG7"></script>
+    <!-- Google tag (gtag.js) — loaded after the page finishes loading so it can't delay LCP. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-9Q37MYTPG7');
+      var __gtagLoaded = false;
+      function __loadGtag() {
+        if (__gtagLoaded) return;
+        __gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-9Q37MYTPG7';
+        document.head.appendChild(s);
+      }
+      if (document.readyState === 'complete') __loadGtag();
+      else { window.addEventListener('load', __loadGtag); setTimeout(__loadGtag, 5000); }
     </script>
     <link rel="icon" type="image/svg+xml" href={siteInfo.favicon} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* LCP 小试 (2026-11-27): hero 背景图已移除，图片预加载也一并去掉。
+        og:image 仍用这张图（社交分享用，不影响 LCP）。
+        Oxanium 字体预加载保留（hero 标题仍用这个字体）。 */}
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+      href="/fonts/Oxanium-Medium.woff2"
+    />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="keywords" content={siteInfo.keywords.join(", ")} />
@@ -110,8 +143,8 @@ const ogImageUrl = new URL(ogImage ?? welcomeConfig.bgImage, siteInfo.url);
     <a class="skip-link" href="#main-content">
       {t("common.skip")}
     </a>
-    <Navigation pathname={Astro.url.pathname} client:load />
-    <Search posts={posts} client:load />
+    <Navigation pathname={Astro.url.pathname} client:idle />
+    <Search posts={searchPosts} client:idle />
     <Welcome
       compact={!home}
       title={heroTitle}
